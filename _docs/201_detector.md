@@ -105,6 +105,6 @@ Figure 3. Definition of miscut angle.
 </center>
 
 
-**Reference**
+**Reference**<br>
 [1] Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device.v2018. <br>
 [2] Synopsys.Sentaurus™ Device User Guide.June 2018.
