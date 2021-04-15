@@ -174,7 +174,8 @@ The LGAD operates under a completely depleted external reverse bias, which produ
 ##### (3.2) Avalanche impact ionization
 
 #### (4) Charge Collection & Time Resolution
-When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. ( As shown in figure 4b.5.1 )
+When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. <br>
+If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned, the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time and will lead to the generation of more ionized charge, so that the time resolution performance is poor. (As show in figure 4b.4.1) <br>
 
 <center>
 <img src="/images/.png" width="500"/>
@@ -185,7 +186,6 @@ When the epitaxial layer of LGAD is completely exhausted, the space charge in th
 Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
 </font>
 </center>
-
 
 
 **Reference**<br>
