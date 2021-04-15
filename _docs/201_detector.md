@@ -109,7 +109,7 @@ Figure 3. Definition of miscut angle.
 [1] Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device.v2018. <br>
 [2] Synopsys.Sentaurus™ Device User Guide.June 2018.
 
-## LGAD
+## LGAD (Low Gain Avalanche Detectors)
 ### 4a) What is the LGAD & What is the usage
 In high energy physics experiments, it is often necessary to determine the position and number of particles. How to detect particles effectively, and how to distinguish the two particles passing before and after in a very short time, has become an important problem in high energy experiments. <br>
 The root of this problem lies in the design of the sensors. <br>
@@ -119,11 +119,82 @@ LGAD is one of the detectors designed based on the above considerations. In shor
 ### 4b) Main Principle
 #### (1) Structure
 
-#### (2) The detectors were hit by a particle.
+<center>
+<img src="/images/sic_hexagonal.png" width="500"/>
+</center>
 
-#### (3) Avalanche impact ionization
+<center>
+<font size=2 >
+Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+</font>
+</center>
+The structure of the LGAD is based on standard PIN diodes, where the charge doubling is caused by the gain layer.
 
-#### (4) Working Conditions
+#### (2) Working Conditions
+The LGAD operates at an external reverse bias voltage that allows it to completely exhaust the device without breaking it down.The electric field at the junction increases significantly in the case of reverse bias, and the peak intensity of the electric field increases with the increase of the amplitude of reverse bias voltage. ( As shown in figure 4b.2.1 )
 
-#### (5) Charge Collection & Time Resolution
+<center>
+<img src="/images/sic_hexagonal.png" width="500"/>
+</center>
+
+<center>
+<font size=2 >
+Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+</font>
+</center>
+
+#### (3) The detectors were hit by a particle.
+The figure shows what happens when a heavy ion hits the center of the LGAD.The colored areas in the figure represent the avalanche multiplication caused by heavy ions that produce charge carriers.
+
+<center>
+<img src="/images/sic_hexagonal.png" width="500"/>
+</center>
+
+<center>
+<font size=2 >
+Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+</font>
+</center>
+
+Because the electric field at the PN junction increases significantly in the case of reverse bias.This allows an avalanche multiplier to be sent before the small number of electrons ionised by the incident particle collisions are absorbed by the electrodes, resulting in appreciable gains.
+
+
+
+##### (3.1)  Radiation Models
+###### Gamma Radiation
+
+###### Alpha Particles
+
+###### Heavy Ions
+
+
+##### (3.2) Avalanche impact ionization
+
+#### (4) Charge Collection & Time Resolution
+When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. ( As shown in figure 4b.5.1 )
+
+<center>
+<img src="/images/sic_hexagonal.png" width="500"/>
+</center>
+
+<center>
+<font size=2 >
+Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+</font>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
