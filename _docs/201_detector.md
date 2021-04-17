@@ -141,20 +141,23 @@ The LGAD operates at an external reverse bias voltage that allows it to complete
 
 <center>
 <font size=2 >
-Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+Figure 4b.2.1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
 </font>
 </center>
 
 #### (3) The detectors were hit by a particle.
-The figure shows what happens when a heavy ion hits the center of the LGAD.The colored areas in the figure represent the avalanche multiplication caused by heavy ions that produce charge carriers.
+The figure shows what happens when a heavy ion hits the center of the LGAD. <br>
+
+The epitaxial layer of the LGAD shown in the figure is about 100 microns and the substrate is about 350 microns.Heavy ions incident vertically from the center of the device.
+The gradient of color from red to green in the image shows the gradient of carrier concentration due to heavy ion collision ionization. <br>
 
 <center>
-<img src="/images/.png" width="500"/>
+<img src="/images/Heavy ion incident.png" width="500"/>
 </center>
 
 <center>
 <font size=2 >
-Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+Figure 4b.4.1. Schematic diagram of the ionized carrier concentration when the heavy ion incident.
 </font>
 </center>
 
@@ -178,12 +181,12 @@ When the epitaxial layer of LGAD is completely exhausted, the space charge in th
 If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned, the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time and will lead to the generation of more ionized charge, so that the time resolution performance is poor. (As show in figure 4b.4.1) <br>
 
 <center>
-<img src="/images/.png" width="500"/>
+<img src="/images/Heavy ion incident.png" width="500"/>
 </center>
 
 <center>
 <font size=2 >
-Figure 1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+Figure 4b.4.1. Schematic diagram of the ionized carrier concentration when the heavy ion incident.
 </font>
 </center>
 
