@@ -131,19 +131,21 @@ Figure 4b.1.1. Schematic view of a traditional silicon sensor on the left and an
 </center>
 
 The structure of the LGAD is based on standard PIN diodes, where the charge doubling is caused by the gain layer. <br>
-
-#### (2) Working Conditions
-The LGAD operates at an external reverse bias voltage that allows it to completely exhaust the device without breaking it down.The electric field at the junction increases significantly in the case of reverse bias, and the peak intensity of the electric field increases with the increase of the amplitude of reverse bias voltage. ( As shown in figure 4b.2.1 ) <br>
+The following instructions are based on the device structure shown in the figure 4b.1.2 as below. 
 
 <center>
-<img src="/images/.png" width="500"/>
+<img src="/images/PiN_LGAD_Schematic view.png" width="500"/>
 </center>
 
 <center>
 <font size=2 >
-Figure 4b.2.1. Crystal orientations in a hexagonal SiC polytype.(Reference:Synopsys.TCAD Sentaurus™ Tutorial.Sentaurus Device)
+Figure 4b.1.1. Schematic view of a traditional silicon sensor on the left and an LGAD on the right.
+[1].
 </font>
 </center>
+
+#### (2) Working Conditions
+The LGAD operates at an external reverse bias voltage that allows it to completely exhaust the device without breaking it down.The electric field at the junction increases significantly in the case of reverse bias, and the peak intensity of the electric field increases with the increase of the amplitude of reverse bias voltage. 
 
 #### (3) The detectors were hit by a particle.
 The figure shows what happens when a heavy ion hits the center of the LGAD. <br>
@@ -178,15 +180,28 @@ The LGAD operates under a completely depleted external reverse bias, which produ
 
 #### (4) Charge Collection & Time Resolution
 When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. <br>
-If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned, the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time and will lead to the generation of more ionized charge, so that the time resolution performance is poor. (As show in figure 4b.4.1) <br>
+If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned (As show in figure 4b.4.1), the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time and will lead to the generation of more ionized charge, so that the time resolution performance is poor. (As show in figure 4b.4.2) <br>
+
 
 <center>
-<img src="/images/.png" width="500"/>
+<img src="/images/electric_vbis.png" width="500"/>
 </center>
 
 <center>
 <font size=2 >
-Figure 4b.4.1. Schematic diagram of the ionized carrier concentration when the heavy ion incident.
+Figure 4b.4.1. Diagram of electric field distribution in the device under different bias voltages.
+</font>
+</center>
+
+
+
+<center>
+<img src="/images/current pulse.png" width="500"/>
+</center>
+
+<center>
+<font size=2 >
+Figure 4b.4.2. The curve of current pulse with time under different bias voltage.
 </font>
 </center>
 
