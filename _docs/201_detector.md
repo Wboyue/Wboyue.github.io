@@ -184,7 +184,7 @@ If the epitaxial layer of the device is not completely depleted and the depletio
 
 
 <center>
-<img src="/images/electric_vbis.png" width="500"/>
+<img src="/images/electric_vbis.png" style="zoom:100%" />
 </center>
 
 <center>
@@ -196,7 +196,7 @@ Figure 4b.4.1. Diagram of electric field distribution in the device under differ
 
 
 <center>
-<img src="/images/current pulse.png" width="500"/>
+<img src="/images/current pulse.png" style="zoom:100%" />
 </center>
 
 <center>
