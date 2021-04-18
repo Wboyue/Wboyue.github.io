@@ -134,12 +134,12 @@ The structure of the LGAD is based on standard PIN diodes, where the charge doub
 The following instructions are based on the device structure shown in the figure 4b.1.2 as below. 
 
 <center>
-<img src="/images/PiN_LGAD_Schematic view.png" width="500"/>
+<img src="/images/4H-SiC LGAD_Schematic view.png" width="500"/>
 </center>
 
 <center>
 <font size=2 >
-Figure 4b.1.1. Schematic view of a traditional silicon sensor on the left and an LGAD on the right.
+Figure 4b.1.1. Schematic view of a 4H-SiC LGAD.
 [1].
 </font>
 </center>
