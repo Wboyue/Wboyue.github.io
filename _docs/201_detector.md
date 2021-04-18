@@ -184,7 +184,7 @@ If the epitaxial layer of the device is not completely depleted and the depletio
 
 
 <center>
-<img src="/images/electric_vbis.png" style="zoom:100%" />
+<img src="/images/electric_vbis.png" style="height:500px" />
 </center>
 
 <center>
