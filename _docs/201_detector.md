@@ -154,7 +154,7 @@ The epitaxial layer of the LGAD shown in the figure is about 100 microns and the
 The gradient of color from red to green in the image shows the gradient of carrier concentration due to heavy ion collision ionization. <br>
 
 <center>
-<img src="/images/Heavy ion incident.png" width="500"/>
+<img src="/images/Heavy ion incident.png" style="zoom:100%" />
 </center>
 
 <center>
