@@ -228,6 +228,18 @@ Figure 4b.4.2. The curve of current pulse with time under different bias voltage
 </center>
 
 
+Fig. 4b.4.3 shows how the time-resolution performance of the device can be improved by appropriately reducing the peak doping and increasing the operating voltage while maintaining the same gain. <br>
+
+
+<center>
+<img src="/images/current pulse.png" style="zoom:100%" />
+</center>
+
+<center>
+<font size=2 >
+Figure 4b.4.3. The current variation curve is obtained by adjusting the working voltage and the peak doping concentration to maintain the appropriate gain constant.
+</font>
+</center>
 **Reference**<br>
 [1] M. Ferrero et al.,Evolution of the design of ultra fast silicon detector to cope with high
 irradiation fluences and fine segmentation,2020 JINST 15 C04027. <br>
