@@ -132,7 +132,9 @@ Figure 4b.1.1. Schematic view of a traditional silicon sensor on the left and an
 </center>
 
 The structure of the LGAD is based on standard PIN diodes, where the charge doubling is caused by the gain layer. <br>
+
 The following instructions are based on the device structure shown in the figure 4b.1.2 as below. The thickness of the N-type epitaxial layer of the LGAD (doping concentration of phosphorus is 1E13) is about 100 microns, and the thickness of the N-type substrate (doping concentration of phosphorus is 1E19) is about 350 microns. The doping of the N-type gain layer follows a Gaussian distribution (Gaussian peaks are described in the relevant section). <br>
+
 Figure 4b.1.3 shows an enlarged view near the gain layer.
 
 <center>
@@ -192,8 +194,10 @@ The LGAD operates under a completely depleted external reverse bias, which produ
 
 #### (4) Charge Collection & Time Resolution
 When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. <br>
+
 If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned , the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time , so that the time resolution performance is poor. <br>
-Figure 4b.4.1 shows the internal electric field distribution of the device when the Gaussian peak doping is 2.64e17 and the applied bias voltage is 200V, 400V and 600V respectively. In the figure 4b.4.1, when the voltage is 200V, the internal electric field is significantly uneven and there is a sag, which indicates that the epitaxial layer of the device is not completely exhausted at this time, and the width of the space charge region is not up to 100 microns.As mentioned in Section 3.2, too low built in electric field will result in unsatisfactory gain, longer charge collection time and poorer temporal resolution performance. The green curve in the figure 4b.4.1 shows that a relatively uniform electric field has been built inside during this period, and the device is completely exhausted at this time. However, compared with the blue curve, it can be seen that the intensity of the built-in electric field shown by the blue curve is larger and more uniform. This means that the blue curve has greater gain and better time resolution than the green curve. Fig. 4b.4.2 shows the curve of the corresponding current changing with time under the condition of Fig. 4b.4.1. Those conclusions can be seen in Figure 4b.4.2 by comparing the curves of current over time.
+
+Figure 4b.4.1 shows the internal electric field distribution of the device when the Gaussian peak doping is 2.64e17 and the applied bias voltage is 200V, 400V and 600V respectively. In the figure 4b.4.1, when the voltage is 200V, the internal electric field is significantly uneven and there is a sag, which indicates that the epitaxial layer of the device is not completely exhausted at this time, and the width of the space charge region is not up to 100 microns.As mentioned in Section 3.2, too low built in electric field will result in unsatisfactory gain, longer charge collection time and poorer temporal resolution performance. The green curve in the figure 4b.4.1 shows that a relatively uniform electric field has been built inside during this period, and the device is completely exhausted at this time. However, compared with the blue curve, it can be seen that the intensity of the built-in electric field shown by the blue curve is larger and more uniform. This means that the blue curve has greater gain and better time resolution than the green curve. Fig. 4b.4.2 shows the curve of the corresponding current changing with time under the condition of Fig. 4b.4.1. Those conclusions can be seen in Figure 4b.4.2 by comparing the curves of current over time. <br>
 
 
 <center>
