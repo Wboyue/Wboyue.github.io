@@ -192,11 +192,12 @@ The LGAD operates under a completely depleted external reverse bias, which produ
 
 #### (4) Charge Collection & Time Resolution
 When the epitaxial layer of LGAD is completely exhausted, the space charge in this space will generate an approximately uniform electric field, which can accelerate the effect of ionized particles, so that the particles can be quickly collected by the electrode plate, thus improving the time resolution performance. <br>
-If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned (As show in figure 4b.4.1), the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time and will lead to the generation of more ionized charge, so that the time resolution performance is poor. (As show in figure 4b.4.2) <br>
+If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned , the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time , so that the time resolution performance is poor. <br>
+Figure 4b.4.1 shows the internal electric field distribution of the device when the Gaussian peak doping is 2.64e17 and the applied bias voltage is 200V, 400V and 600V respectively. In the figure 4b.4.1, when the voltage is 200V, the internal electric field is significantly uneven and there is a sag, which indicates that the epitaxial layer of the device is not completely exhausted at this time, and the width of the space charge region is not up to 100 microns.As mentioned in Section 3.2, too low built in electric field will result in unsatisfactory gain, longer charge collection time and poorer temporal resolution performance. The green curve in the figure 4b.4.1 shows that a relatively uniform electric field has been built inside during this period, and the device is completely exhausted at this time. However, compared with the blue curve, it can be seen that the intensity of the built-in electric field shown by the blue curve is larger and more uniform. This means that the blue curve has greater gain and better time resolution than the green curve. Fig. 4b.4.2 shows the curve of the corresponding current changing with time under the condition of Fig. 4b.4.1. Those conclusions can be seen in Figure 4b.4.2 by comparing the curves of current over time.
 
 
 <center>
-<img src="/images/electric_vbis.png" style="height:500px" />
+<img src="/images/electric_vbis.png" style="zoom:100%" />
 </center>
 
 <center>
@@ -208,7 +209,7 @@ Figure 4b.4.1. Diagram of electric field distribution in the device under differ
 
 
 <center>
-<img src="/images/current pulse.png" style="zoom:100%" />
+<img src="/images/current pulse peak_2.64e17.png" style="zoom:100%" />
 </center>
 
 <center>
