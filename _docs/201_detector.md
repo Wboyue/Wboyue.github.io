@@ -202,47 +202,6 @@ When the epitaxial layer of LGAD is completely exhausted, the space charge in th
 If the epitaxial layer of the device is not completely depleted and the depletion layer is correspondently thinned , the range of uniform electric field in the epitaxial layer must decrease along with it.This will cause the carrier can not be accelerated to enough speed, can not be absorbed in a short time , so that the time resolution performance is poor. <br>
 
 
-Figure 4b.4.1 shows the internal electric field distribution of the device when the Gaussian peak doping is 2.64e17 and the applied bias voltage is 200V, 400V and 600V respectively. In the figure 4b.4.1, when the voltage is 200V, the internal electric field is significantly uneven and there is a sag, which indicates that the epitaxial layer of the device is not completely exhausted at this time, and the width of the space charge region is not up to 100 microns.As mentioned in Section 3.2, too low built in electric field will result in unsatisfactory gain, longer charge collection time and poorer temporal resolution performance. The green curve in the figure 4b.4.1 shows that a relatively uniform electric field has been built inside during this period, and the device is completely exhausted at this time. However, compared with the blue curve, it can be seen that the intensity of the built-in electric field shown by the blue curve is larger and more uniform. This means that the blue curve has greater gain and better time resolution than the green curve. <br>
-
-
-Fig. 4b.4.2 shows the curve of the corresponding current changing with time under the condition of Fig. 4b.4.1. Those conclusions can be seen in Figure 4b.4.2 by comparing the curves of current over time. <br>
-
-
-<center>
-<img src="/images/electric_vbis.png" style="zoom:100%" />
-</center>
-
-<center>
-<font size=2 >
-Figure 4b.4.1. Diagram of electric field distribution in the device under different bias voltages.
-</font>
-</center>
-
-
-
-<center>
-<img src="/images/current pulse peak_2.64e17.png" style="zoom:100%" />
-</center>
-
-<center>
-<font size=2 >
-Figure 4b.4.2. The curve of current pulse with time under different bias voltage.
-</font>
-</center>
-
-
-Fig. 4b.4.3 shows how the time-resolution performance of the device can be improved by appropriately reducing the peak doping and increasing the operating voltage while maintaining the same gain. <br>
-
-
-<center>
-<img src="/images/current pulse.png" style="zoom:100%" />
-</center>
-
-<center>
-<font size=2 >
-Figure 4b.4.3. The current variation curve is obtained by adjusting the working voltage and the peak doping concentration to maintain the appropriate gain constant.
-</font>
-</center>
 **Reference**<br>
 [1] M. Ferrero et al.,Evolution of the design of ultra fast silicon detector to cope with high
 irradiation fluences and fine segmentation,2020 JINST 15 C04027. <br>
