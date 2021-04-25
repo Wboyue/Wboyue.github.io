@@ -129,7 +129,7 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 </center>
 <br>
 * Incomplete Ionization Model
-1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: 
+1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
