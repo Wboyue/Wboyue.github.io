@@ -15,6 +15,10 @@ used in astrophysics having long timing gate, human eyes etc.
 Capability of reproducing the event topology by means of hit position information
 is also commonly required for the particle detectors.   <br>
 
+$$
+N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
+$$
+
 Those detectors are classifiable from several perspective, and the following examples are some of the typical classification. <br>
 
 
