@@ -110,7 +110,7 @@ Figure 3. Definition of miscut angle.
 [2] Synopsys.Sentaurus™ Device User Guide.June 2018.
 
 ## Several physical models related to silicon carbide
-### 
+### 4a) Incomplete Ionization Model
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
