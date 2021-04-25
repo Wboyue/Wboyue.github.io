@@ -135,16 +135,14 @@ $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
 $$
 
+$$
+N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
+$$
+
 
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
-
-
-$$
-\frac{\Delta I (\Phi_{eq})}{V} = \alpha \Phi_{eq} \times M_{I}(\Phi_{eq}, V_{bias})
-$$
-
 ### 5a) What is the LGAD & What is the usage
 In high energy physics experiments, it is often necessary to determine the position and number of particles. How to detect particles effectively, and how to distinguish the two particles passing before and after in a very short time, has become an important problem in high energy experiments. <br>
 
