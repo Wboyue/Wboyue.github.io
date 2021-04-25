@@ -131,6 +131,7 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 * Incomplete Ionization Model
 1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: 
 $$N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}$$
+$$min\quad L=\frac{1}{2}||\mathbf{w}||^{2}-\Sigma_{i=1}^{N}\alpha_{i}(y_{i}(\mathbf{w}\circ\mathbf{x}_{i}+b)-1)$$
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
