@@ -111,6 +111,26 @@ Figure 3. Definition of miscut angle.
 
 ## Several physical models related to silicon carbide
 ### 4a) Incomplete Ionization Model
+* Dopant Incomplete Ionization
+In SiC materials, the impurity atoms are usually located in the deeper energy levels, so it is necessary to consider the degree of ionization of each impurity. <br>
+<br>
+For some impurity atoms, their ionization energy depends on the position (“h” or “k”) of the lattice they occupy.Table 1 shows the ionization energies of some common impurity atoms in different cell positions. Table 4a.1 shows the ionization energies of several common doped atoms occupying different lattice positions. <br>
+<br>
+
+<center>
+<img src="/images/JC182-0.png" style="zoom:100%" />
+</center>
+
+<center>
+<font size=2 >
+Table 4a.1. Dopant ionization energies for 4H-SiC.
+[1].
+</font>
+</center>
+<br>
+* Incomplete Ionization Model
+1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: 
+$$N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}$$
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
