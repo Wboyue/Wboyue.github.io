@@ -91,7 +91,7 @@ The direction of accumulation along the upward direction is the C-axis in the pr
 ### 3c) Miscut angle
 In the process of silicon carbide wafer production, the crystal growth is not completely along the normal direction of the wafer surface,
 but there is an angle between the growth direction and the normal direction of the wafer surface.This Angle can be called a miscut Angle.
-The miscut angle is usually in the range of 3.5 - 8.5°Field $$\vec{E_w}(\vec{x})$$ ..
+The miscut angle is usually in the range of 3.5 - 8.5°.
 
 <center>
 <img src="/images/sp_sic_miscut.png" width="500"/>
