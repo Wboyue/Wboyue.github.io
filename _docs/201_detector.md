@@ -111,11 +111,10 @@ Figure 3. Definition of miscut angle.
 
 ## Several physical models related to silicon carbide
 ### 4a) Incomplete Ionization Model
-* Dopant Incomplete Ionization <br>
+1. Dopant Incomplete Ionization <br>
 In SiC materials, the impurity atoms are usually located in the deeper energy levels, so it is necessary to consider the degree of ionization of each impurity. <br>
 <br>
-For some impurity atoms, their ionization energy depends on the position (“h” or “k”) of the lattice they occupy.Table 1 shows the ionization energies of some common impurity atoms in different cell positions. Table 4a.1 shows the ionization energies of several common doped atoms occupying different lattice positions. <br>
-<br>
+For some impurity atoms, their ionization energy depends on the position (“h” or “k”) of the lattice they occupy. Table 4a.1 shows the ionization energies of several common doped atoms occupying different lattice positions. <br>
 
 <center>
 <img src="/images/JC182-0.png" style="zoom:100%" />
@@ -128,8 +127,8 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 </font>
 </center>
 <br>
-* Incomplete Ionization Model
-The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
+2. Incomplete Ionization Model
+-The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
@@ -141,19 +140,7 @@ N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
 \tag{4a.2}
 $$
 
-Another distribution function which is used to consider the incomplete ionization of impurity atoms  in SiC materials:<br>
-
-$$
-N_{D}=\frac{N_{D,0}}{1+G_{D}(T)exp(\frac{E_{F,n}-E_{C}}{kT})}
-\tag{4a.3}
-$$
-
-$$
-N_{A}=\frac{N_{A,0}}{1+G_{A}(T)exp(-\frac{E_{F,p}-E_{V}}{kT})}
-\tag{4a.4}
-$$
-
-Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
+-Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}/frac{n}{n_{I}}}
@@ -165,31 +152,61 @@ N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
 \tag{4a.6}
 $$
 <br>
-Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.<br>
+-Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.
+
 <font size="2">
-(Quantization Models:)<br>
-At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.
-</font><br /> 
+*Quantization Models:<br>
+At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.*
+</font>
 
-
-The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
-
-$$
-\DeltaE_{D}=\DeltaE_{D,0}-\alpha_{D}\cdotN_{tot}^{1/3}
-$$
+-The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
 
 $$
-\DeltaE_{A}=\DeltaE_{A,0}-\alpha_{A}\cdotN_{tot}^{1/3}
+\Delta E_{D}=\DeltaE_{D,0}- \alpha_{D} \cdot N_{tot}^{1/3}
 $$
 
-<br>
+$$
+\Delta E_{A}=\DeltaE_{A,0}- \alpha_{A} \cdot N_{tot}^{1/3}
+$$
 where $N_{tot}=N_{A,0}+N_{D,0}$ . <br>
+This indicates that the higher the total doping, the greater the degree of ionization.
+
+$$
+V_{E}=-\int_{C}Edl \tag{1-1} \label{eq1} 
+$$
+
+### 4b) Band Gap Model
+1.Band Gap
+-Bandgap dependency on lattice temperature
+
+$$
+E_{g,eff}(T)=E{g}(0)-\frac{\alpha T^{2}}{T+\beta}-\Delta E_{BGN} \tag{4b.1}
+$$
+
+$$
+\Delta E_{BGN}=\Delta E_{g}^{0}+ \Delta E_{g}^{Fermi} \tag{4b.2}
+$$
+
+-Bandgap Narrowing for Slotboom Model
+Slotboom Model is used for band gap narrowing in SiC materials.<br>
+The main difference between the different band gap models is how to handle with the band gap narrowing term $\Delta E_{g}^{0}$.<br>
+For Slotboom Model used in SiC:
+
+$$
+\Delta E_{g}^{0}=E_{ref}[ln(/frac{N_{tot}}{N_{ref}})+\sqrt{(ln(/frac{N_{tot}}{N_{ref}}))^{2}+0.5}]
+$$
+
+2.Effective Electron Affinity
+-The electron affinity is temperature dependent and affected by band gap narrowing.
+
+
+**Reference**
+
+[1]. H. Matsuura, “Influence of Excited States of Deep Acceptors on Hole Concentration in SiC,” in International Conference on Silicon Carbide and Related Materials (ICSCRM), Tsukuba, Japan, pp. 679–682, October 2001.
+
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
-
-$$x+y=z$$
-
 ### 5a) What is the LGAD & What is the usage
 In high energy physics experiments, it is often necessary to determine the position and number of particles. How to detect particles effectively, and how to distinguish the two particles passing before and after in a very short time, has become an important problem in high energy experiments. <br>
 
@@ -240,6 +257,7 @@ Figure 5b.1.3. Enlarged view near the gain layer of the 4H-SiC LGAD.
 </font>
 </center>
 
+
 #### (2) Working Conditions
 The LGAD operates at an external reverse bias voltage that allows it to completely exhaust the device without breaking it down.The electric field at the junction increases significantly in the case of reverse bias, and the peak intensity of the electric field increases with the increase of the amplitude of reverse bias voltage. 
 
@@ -265,13 +283,9 @@ Because the electric field at the PN junction increases significantly in the cas
 
 ##### (3.1)  Radiation Models
 The LGAD operates under a completely depleted external reverse bias, which produces a signal proportional to the energy deposited by the incident radiation. <br>
-###### Gamma Radiation
-
-###### Alpha Particles
-
-###### Heavy Ions
-
-
+1.Gamma Radiation
+2.Alpha Particles
+3.Heavy Ions
 ##### (3.2) Avalanche impact ionization
 
 #### (4) Charge Collection
