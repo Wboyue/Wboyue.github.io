@@ -129,8 +129,7 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 </center>
 <br>
 * Incomplete Ionization Model
-1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
-
+The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
@@ -142,7 +141,7 @@ N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
 \tag{4a.2}
 $$
 
-2. Another distribution function which is used to consider the incomplete ionization of impurity atoms  in SiC materials:<br>
+Another distribution function which is used to consider the incomplete ionization of impurity atoms  in SiC materials:<br>
 
 $$
 N_{D}=\frac{N_{D,0}}{1+G_{D}(T)exp(\frac{E_{F,n}-E_{C}}{kT})}
@@ -154,7 +153,7 @@ N_{A}=\frac{N_{A,0}}{1+G_{A}(T)exp(-\frac{E_{F,p}-E_{V}}{kT})}
 \tag{4a.4}
 $$
 
-3. Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
+Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}/frac{n}{n_{I}}}
@@ -165,11 +164,15 @@ $$
 N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
 \tag{4a.6}
 $$
+<br>
 Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.<br>
+<font size="2">
 (Quantization Models:)<br>
 At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.
+</font><br /> 
 
-4. The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
+
+The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
 
 $$
 \DeltaE_{D}=\DeltaE_{D,0}-\alpha_{D}\cdotN_{tot}^{1/3}
@@ -178,6 +181,8 @@ $$
 $$
 \DeltaE_{A}=\DeltaE_{A,0}-\alpha_{A}\cdotN_{tot}^{1/3}
 $$
+
+<br>
 where $N_{tot}=N_{A,0}+N_{D,0}$ . <br>
 
 ## 4H-SiC LGAD
