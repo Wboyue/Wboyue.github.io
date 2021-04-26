@@ -131,19 +131,48 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 * Incomplete Ionization Model
 1. The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
+
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
+\tag{4a.1}
 $$
 
 $$
 N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
+\tag{4a.2}
 $$
 
-
+2. Another distribution function which is used to consider the incomplete ionization of impurity atoms  in SiC materials:<br>
 
 $$
-\left.\Delta E_{\mathrm{g}}^{\mathrm{Fermi}}=k 300 \mathrm{~K}\left[\ln \left(\frac{N_{\mathrm{V}} N_{\mathrm{C}}}{N_{\mathrm{A}, 0} N_{\mathrm{D}, 0}}\right)+F_{1 / 2}^{-1}\left(\frac{N_{\mathrm{A}, 0}}{N_{\mathrm{V}}}\right)+F_{1 / 2}^{-1}\left(\frac{N_{\mathrm{D}, 0}}{N_{\mathrm{C}}}\right)\right]\right]
+N_{D}=\frac{N_{D,0}}{1+G_{D}(T)exp(\frac{E_{F,n}-E_{C}}{kT})}
+\tag{4a.3}
 $$
+
+$$
+N_{A}=\frac{N_{A,0}}{1+G_{A}(T)exp(-\frac{E_{F,p}-E_{V}}{kT})}
+\tag{4a.4}
+$$
+
+3. Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
+
+$$
+N_{D}=\frac{N_{D,0}}{1+g_{D}/frac{n}{n_{I}}}
+\tag{4a.5}
+$$
+
+$$
+N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
+\tag{4a.6}
+$$
+Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.<br>
+(Quantization Models:)<br>
+At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.
+
+4. The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
+
+$$
+\DeltaE_{D}=\DeltaE_{D,0}-
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
