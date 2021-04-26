@@ -127,8 +127,8 @@ Table 4a.1. Dopant ionization energies for 4H-SiC.
 </font>
 </center>
 <br>
-2. Incomplete Ionization Model
--The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
+2. Incomplete Ionization Model <br>
+* The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
 $$
 N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
@@ -152,14 +152,13 @@ N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
 \tag{4a.6}
 $$
 <br>
--Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.
+* Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.
 
-<font size="2">
 *Quantization Models:<br>
-At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.*
-</font>
+At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.
+<br>
 
--The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
+* The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
 
 $$
 \Delta E_{D}=\DeltaE_{D,0}- \alpha_{D} \cdot N_{tot}^{1/3}
@@ -177,7 +176,7 @@ $$
 
 ### 4b) Band Gap Model
 1.Band Gap
--Bandgap dependency on lattice temperature
+* Bandgap dependency on lattice temperature
 
 $$
 E_{g,eff}(T)=E{g}(0)-\frac{\alpha T^{2}}{T+\beta}-\Delta E_{BGN} \tag{4b.1}
@@ -197,7 +196,7 @@ $$
 $$
 
 2.Effective Electron Affinity
--The electron affinity is temperature dependent and affected by band gap narrowing.
+* The electron affinity is temperature dependent and affected by band gap narrowing.
 
 
 **Reference**
