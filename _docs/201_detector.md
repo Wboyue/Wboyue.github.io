@@ -111,63 +111,63 @@ Figure 3. Definition of miscut angle.
 
 ## Several physical models related to silicon carbide
 ### 4a) Incomplete Ionization Model
+
 1. Dopant Incomplete Ionization <br>
-In SiC materials, the impurity atoms are usually located in the deeper energy levels, so it is necessary to consider the degree of ionization of each impurity. <br>
-<br>
-For some impurity atoms, their ionization energy depends on the position (“h” or “k”) of the lattice they occupy. Table 4a.1 shows the ionization energies of several common doped atoms occupying different lattice positions. <br>
-
-<center>
-<img src="/images/JC182-0.png" style="zoom:100%" />
-</center>
-
-<center>
-<font size=2 >
-Table 4a.1. Dopant ionization energies for 4H-SiC.
-</font>
-</center>
-<br>
+   In SiC materials, the impurity atoms are usually located in the deeper energy levels, so it is necessary to consider the degree of ionization of each impurity. <br>
+   <br>
+   For some impurity atoms, their ionization energy depends on the position (“h” or “k”) of the lattice they occupy. Table 4a.1 shows the ionization energies of several common doped atoms occupying different lattice positions. <br>
+  
+    <center>
+    <img src="/images/JC182-0.png" style="zoom:100%" />
+    </center>
+  
+    <center>
+    <font size=2 >
+    Table 4a.1. Dopant ionization energies for 4H-SiC.
+    </font>
+    </center>
+    <br>
 2. Incomplete Ionization Model <br>
-* The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
+    * The concentration of ionized impurity atoms in a semiconductor usually follows the Fermi-Dirac distribution: <br>
 
-$$
-N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
-\tag{4a.1}
-$$
+    $$
+    N_{D}=\frac{N_{D,0}}{1+g_{D}exp(\frac{E_{F,n}-E_{D}}{kT})}
+    \tag{4a.1}
+    $$
 
-$$
-N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
-\tag{4a.2}
-$$
+    $$
+    N_{A}=\frac{N_{A,0}}{1+g_{A}exp(\frac{E_{A}-E_{F,p}}{kT})}
+    \tag{4a.2}
+    $$
 
-* Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
+    * Rewrite Eq. 4a.1 and Eq. 4a.2 using carrier concentration as the variable
 
-$$
-N_{D}=\frac{N_{D,0}}{1+g_{D}/frac{n}{n_{I}}}
-\tag{4a.5}
-$$
+    $$
+    N_{D}=\frac{N_{D,0}}{1+g_{D}/frac{n}{n_{I}}}
+    \tag{4a.5}
+    $$
 
-$$
-N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
-\tag{4a.6}
-$$
-<br>
-* Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.
+    $$
+    N_{A}=\frac{N_{A,0}}{1+g_{A}/frac{p}{p_{I}}}
+    \tag{4a.6}
+    $$
+    <br>
+    * Here n1 and p1 are valid when the Boltzmann statistical distribution is used and there is no quantization model. If Ferm-Dirac statistics or quantitative models are used, then n1 and p1 need to be multiplied by the corresponding coefficients γn、γp.
 
-*Quantization Models:<br>
-At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.*
-<br>
+    *Quantization Models:At present, some devices (such as MOSFET) have some characteristics of quantum mechanical length dimensions, so the wave of  carriers  can no longer be ignored.The quantitative model is designed to solve the problem of quantum effects.*
+    <br>
 
-* The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
+    * The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
 
-$$
-\Delta E_{D}=\DeltaE_{D,0}- \alpha_{D} \cdot N_{tot}^{1/3}
-$$
+    $$
+    \Delta E_{D}=\DeltaE_{D,0}- \alpha_{D} \cdot N_{tot}^{1/3}
+    $$
 
-$$
-\Delta E_{A}=\DeltaE_{A,0}- \alpha_{A} \cdot N_{tot}^{1/3}
-$$
-where $N_{tot}=N_{A,0}+N_{D,0}$ . <br>
-This indicates that the higher the total doping, the greater the degree of ionization.
+    $$
+    \Delta E_{A}=\DeltaE_{A,0}- \alpha_{A} \cdot N_{tot}^{1/3}
+    $$
+    where $N_{tot}=N_{A,0}+N_{D,0}$ . <br>
+    This indicates that the higher the total doping, the greater the degree of ionization.
 
 ### 4b) Band Gap Model
 1.Band Gap
