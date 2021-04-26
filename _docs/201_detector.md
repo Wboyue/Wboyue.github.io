@@ -172,7 +172,13 @@ At present, some devices (such as MOSFET) have some characteristics of quantum m
 4. The activation energy of the impurity atom is reduced by the total doping concentration of the impurity. <br>
 
 $$
-\DeltaE_{D}=\DeltaE_{D,0}-
+\DeltaE_{D}=\DeltaE_{D,0}-\alpha_{D}\cdotN_{tot}^{1/3}
+$$
+
+$$
+\DeltaE_{A}=\DeltaE_{A,0}-\alpha_{A}\cdotN_{tot}^{1/3}
+$$
+where $N_{tot}=N_{A,0}+N_{D,0}$ . <br>
 
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
