@@ -141,6 +141,10 @@ $$
 
 
 
+$$
+\left.\Delta E_{\mathrm{g}}^{\mathrm{Fermi}}=k 300 \mathrm{~K}\left[\ln \left(\frac{N_{\mathrm{V}} N_{\mathrm{C}}}{N_{\mathrm{A}, 0} N_{\mathrm{D}, 0}}\right)+F_{1 / 2}^{-1}\left(\frac{N_{\mathrm{A}, 0}}{N_{\mathrm{V}}}\right)+F_{1 / 2}^{-1}\left(\frac{N_{\mathrm{D}, 0}}{N_{\mathrm{C}}}\right)\right]\right]
+$$
+
 ## 4H-SiC LGAD
 4H-SiC LGAD refers to the design and production of LGAD(Low Gain Avalanche Detectors) in 4H-SiC semiconductor materials. <br>
 
