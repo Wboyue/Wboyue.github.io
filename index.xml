@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>welcome</title>
+    <link>https://Wboyue.github.io/</link>
+    <description>Recent content on welcome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 </copyright>
+    <atom:link href="https://Wboyue.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://Wboyue.github.io/notebook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://Wboyue.github.io/notebook/</guid>
+      <description>卷积神经网络加速器设计——吴帛樾 #[TOC]
+创新点：
+part1.轻量级的网络结构&amp;mdash;-网络性能对比
+part2.4bit量化，cnn加速器
+python #import #Python 的 import 语句在搜索模块时会遵循一定的顺序和规则，具体如下：
+内置模块: Python 会首先搜索内置模块，这些模块是与 Python 解释器一起发布的，并且位于 Python 安装目录下的 Lib 文件夹中。
+sys.path 路径: Python 解释器会搜索 sys.path 中列出的路径。这个列表包括以下几个位置：
+环境变量 PYTHONPATH 指定的路径。 当前目录（即运行脚本所在的目录）。 标准库目录。 其他用户自定义的目录。 site-packages 目录: 这个目录是 Python 安装时默认创建的，用于存放第三方库和模块。Python 会搜索该目录以导入已安装的第三方模块。
+综上所述，当你在 Python 中使用 import 语句导入模块时，Python 解释器会按照上述规则依次搜索模块，找到第一个匹配的模块并导入它。如果在所有位置都找不到指定的模块，则会引发 ImportError 异常。
+self.lib #self.lib是一个Python对象,它指向一个已经加载到内存中的C共享库(shared library)。
+在这个上下文中,self是指当前类的实例,而lib是该实例的一个属性。当执行了某些初始化操作加载C共享库之后,该库的句柄就被存储在了self.lib属性中。
+在大多数情况下,self.lib通过以下步骤获得:
+使用cffi库加载一个C共享库文件(通常扩展名为.so或.dll)。这一步会返回一个库句柄对象。
+这个库句柄对象被赋值给当前类实例的lib属性,即self.lib = 库句柄。
+加载完共享库后,就可以通过self.lib属性访问该库中暴露的函数和符号。比如self.lib.singleInference就是指向共享库中名为singleInference的函数。
+使用cffi加载C库的典型做法是:
+import cffi ffilib = cffi.FFI() ffilib.cdef(&amp;#34;&amp;#34;&amp;#34; // C函数声明 &amp;#34;&amp;#34;&amp;#34;) self.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
