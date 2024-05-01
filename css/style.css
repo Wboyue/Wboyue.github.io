@@ -469,6 +469,30 @@ input[type="radio"]:not(:checked) + label:after {
 }
 
 
+@font-face {
+  font-family: "iconfont"; /* Project id 4531819 */
+  src: url('iconfont.woff2?t=1714572980324') format('woff2'),
+       url('iconfont.woff?t=1714572980324') format('woff'),
+       url('iconfont.ttf?t=1714572980324') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youxiang:before {
+  content: "\e66a";
+}
+
+.icon-bilibili:before {
+  content: "\e602";
+}
+
+
 .header-logo a {
   padding: 0;
 }
