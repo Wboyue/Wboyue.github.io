@@ -253,7 +253,188 @@
         <div class="post-content">
             <h1 id="基于PYNQ的CNN加速器设计"><a href="#基于PYNQ的CNN加速器设计" class="headerlink" title="基于PYNQ的CNN加速器设计"></a>基于PYNQ的CNN加速器设计</h1><p>本篇主要介绍设计流程。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42334072/article/details/106909647?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-0-106909647-blog-122662678.235%5Ev43%5Epc_blog_bottom_relevance_base1&spm=1001.2101.3001.4242.1&utm_relevant_index=3">基于PYNQ-Z2实现BNN硬件加速</a></p>
+<p>在PYNQ-Z2上运行YOLOv5-s模型,同时将卷积计算部分offload到可编程逻辑(PL)端FPGA加速,建议的设计流程如下:</p>
+<ol>
+<li><p>模型准备</p>
+<ul>
+<li>在主机端(如PC)使用PyTorch框架训练YOLOv5-s模型</li>
+<li>将训练好的PyTorch模型转换为ONNX格式,如yolov5s.onnx</li>
+</ul>
+</li>
+<li><p>使用hls4ml工具流将ONNX模型转换为HLS C++代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hls4ml convert -i yolov5s.onnx -c cpp -g -n yolov5s</span><br></pre></td></tr></table></figure>
+<p>这会生成相应的HLS C++项目。</p>
+</li>
+<li><p>识别需要加速的卷积层</p>
+<ul>
+<li>分析模型,识别出计算量大、需要加速的卷积层</li>
+<li>修改HLS C++项目中对应层的计算函数,替换为自定义的PL IP核接口调用</li>
+</ul>
+</li>
+<li><p>自定义PL IP核设计</p>
+<ul>
+<li>使用HLS或Verilog&#x2F;VHDL设计高效的卷积计算IP核</li>
+<li>考虑使用PYNQ板载的DSP硬核、存储资源等加速</li>
+<li>进行综合、实现和比特流生成</li>
+</ul>
+</li>
+<li><p>硬件部署</p>
+<ul>
+<li>在Vivado中打包PL IP核为IP packaged_kernel</li>
+<li>使用PYNQ的overlay工具部署并连接overlay</li>
+</ul>
+</li>
+<li><p>软件集成</p>
+<ul>
+<li>在PYNQ的Jupyter Notebook中安装ONNX runtime</li>
+<li>编写Python代码加载ONNX模型</li>
+<li>在推理代码中调用编译好的PL IP核执行卷积加速</li>
+</ul>
+</li>
+<li><p>性能评估和优化</p>
+<ul>
+<li>评估端到端推理性能和加速比</li>
+<li>根据需要进行模型压缩、量化等优化</li>
+<li>探索pipeline、流水线等设计以进一步提升加速性能</li>
+</ul>
+</li>
+</ol>
+<p>这个设计流程的关键是利用hls4ml将ONNX模型转换为HLS C++代码,从而可以修改并插入自定义的PL IP核实现指定的计算层加速。同时也可以充分发挥PYNQ FPGA平台的异构加速能力。</p>
+<p>需要注意的是,这种流程需要用户具备一定的FPGA开发经验,能够设计高质量的PL IP核。对于大型模型如YOLOv5-s,往往需要较大的开发量来实现端到端的硬件加速。另外,性能评估和模型优化也是非常关键的环节。</p>
+<p>总的来说,尽管过程较为复杂,但通过合理的设计流程,在PYNQ上同时实现YOLOv5-s部署和PL FPGA加速是可行的,可以挖掘FPGA强大的并行计算能力,为边缘设备带来实时的高性能视觉计算能力。</p>
+<p>在第6步，软件集成部分，为什么要编写Python代码加载ONNX模型，不是用hls4ml工具转成HLS，C++了吗</p>
+<p>您提出了一个很好的问题。在该设计流程的第6步软件集成部分,编写Python代码加载ONNX模型和调用PL IP核,是一种可选的方式,但并不是必须的。</p>
+<p>实际上,有两种主要方式可以集成自定义的PL IP核与模型推理:</p>
+<ol>
+<li><p>使用ONNX Runtime的Python API</p>
+<ul>
+<li>这需要在第6步编写Python代码,显式加载ONNX模型和PL IP核</li>
+<li>ONNX Runtime会在推理时自动调用代码中注册的PL IP核执行加速</li>
+<li>优点是可以方便地挂钩Python预处理&#x2F;后处理代码</li>
+<li>缺点是需要编写额外的Python绑定代码,增加了开发复杂性</li>
+</ul>
+</li>
+<li><p>直接生成HLS C++核心与IP核集成</p>
+<ul>
+<li>在第2步使用hls4ml将ONNX模型转换为HLS C++代码时</li>
+<li>直接修改HLS C++项目,用PL IP核替换需要加速的层</li>
+<li>重新编译生成加速过的整个模型进程</li>
+<li>优点是集成无缝,无需编写Python绑定代码<br>-缺点是后续难以动态加载新的Python预处理&#x2F;后处理代码</li>
+</ul>
+</li>
+</ol>
+<p>根据您的描述,我理解您更倾向于第2种直接在HLS C++代码级别集成PL IP核的方式。这是一种非常合理的流程,您不需要在软件集成步骤单独加载ONNX模型,而是在硬件综合阶段就完成了硬件加速部分的集成。</p>
+<p>总的来说,这两种方式各有利弊,需要根据具体情况权衡选择。如果主要目标是模型推理加速,并且预处理&#x2F;后处理相对固定,那么直接在HLS C++代码中集成会更高效。但如果需要更大的灵活性,使用ONNX Runtime则可以提供更多个性化定制的可能。无论选择哪种,实现自定义PL加速的设计思路是一致的。感谢您的提问,让我更清楚地理解了这部分的不同实现方式。</p>
+<p>如果是第一种方法，那我要怎么在pynq-z2上编写推理代码呢</p>
+<p>如果选择第一种方法,即使用ONNX Runtime的Python API在PYNQ-Z2上编写推理代码并集成自定义PL IP核,步骤大致如下:</p>
+<ol>
+<li><p>在PYNQ-Z2上安装必要的Python包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install onnxruntime</span><br><span class="line">sudo apt install onnx-simplifier</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取已编译好的自定义PL IP核文件(如packaged_kernel.xclbin)并部署到PYNQ的overlay上</p>
+<ul>
+<li>参考PYNQ的overlay教程加载.xclbin文件</li>
+</ul>
+</li>
+<li><p>在Jupyter Notebook中导入onnxruntime并创建InferenceSession</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> onnxruntime <span class="keyword">as</span> rt</span><br><span class="line">session = rt.InferenceSession(<span class="string">&quot;yolov5s.onnx&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注册并加载自定义的PL IP核到InferenceSession</p>
+<ul>
+<li>需要先用C++编写IP核的Python绑定代码</li>
+<li>然后使用session.add_custom_op_library加载</li>
+</ul>
+</li>
+<li><p>准备输入数据并进行预处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">img = cv2.imread(<span class="string">&quot;test_image.jpg&quot;</span>)</span><br><span class="line">input_tensor = preprocess(img) <span class="comment"># 用户自定义预处理函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在InferenceSession中运行模型推理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">outputs = session.run(<span class="literal">None</span>, &#123;session.get_inputs()[<span class="number">0</span>].name: input_tensor&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对模型输出进行解码和后处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">detections = decode_outputs(outputs) <span class="comment"># 用户自定义解码函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可视化或保存最终的目标检测结果</p>
+</li>
+</ol>
+<p>这种方法的关键步骤是第4步,需要用C++编写自定义PL IP核的Python绑定代码,并正确加载到ONNX Runtime中。绑定代码的编写相对复杂,但ONNX Runtime提供了加载自定义算子的标准接口。</p>
+<p>在运行时,ONNX Runtime会自动调用绑定的PL IP核执行加速计算,输入输出通过InferenceSession的run方法传递。</p>
+<p>通过这种方式,既可以在PYNQ-Z2上使用Python代码控制整个推理过程的执行流程,又能在关键的算力层插入自定义的PL加速IP核,获得算力加速的好处。</p>
+<p>当然,使用ONNX Runtime的方式增加了部分开发复杂度,主要在于编写绑定代码和加载PL IP核这一步。但相较于直接修改HLS C++代码,它提供了更好的灵活性和Python生态的兼容性。可以根据实际需求权衡选择使用哪种方式。</p>
+<p>对于第二种方法：</p>
+<p>好的,我详细解释一下如何使用第二种方法,即直接在HLS C++代码层面集成自定义PL IP核,在PYNQ-Z2上实现YOLOv5-s的推理过程。</p>
+<ol>
+<li><strong>使用hls4ml工具将ONNX模型转换为HLS C++项目</strong></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hls4ml convert -i yolov5s.onnx -c cpp -g -n yolov5s</span><br></pre></td></tr></table></figure>
 
+<p>这会生成一个yolov5s_prj文件夹,包含HLS C++代码。</p>
+<ol start="2">
+<li><strong>修改HLS C++代码,集成自定义PL IP核</strong></li>
+</ol>
+<p>打开yolov5s_prj&#x2F;firmware&#x2F;nnet_utils目录,找到需要加速的卷积层对应的计算函数,如convolution.h中的conv_rf…函数。</p>
+<p>用自定义的PL IP核接口替换这些函数,通常需要编写两部分:</p>
+<ul>
+<li>IP核封装函数,调用Vivado HLS生成的IP核接口</li>
+<li>数据动态分区函数,在FPGA DDR与PL IP核间移动数据</li>
+</ul>
+<p>如果是2D卷积,可以参考以下模板:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// myconv2dpluscore.h</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">conv2dpluscore</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="type">const</span> ap_uint&lt;PLIO_SIZE&gt;* in_data,</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="type">const</span> ap_uint&lt;FLIO_SIZE&gt;* coeffs,</span></span></span><br><span class="line"><span class="params"><span class="function">    hls::stream&lt;ap_uint&lt;FLIO_SIZE&gt; &gt;&amp; out</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 调用Vivado HLS生成的IP核接口进行加速运算</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// conv2dplusbias.h  </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">conv2dplusbias</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    hls::stream&lt;ap_uint&lt;FLIO_SIZE&gt; &gt;&amp; in,</span></span></span><br><span class="line"><span class="params"><span class="function">    hls::stream&lt;ap_int32&gt;&amp; out,</span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="type">const</span> ap_uint&lt;BIAS_SIZE&gt;* bias)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 实现卷积后的偏置加操作  </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换convolution.h中原有的conv_rf...函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">conv_rf_leq_1</span><span class="params">(stream&lt;ap_uint&lt;FLIO_SIZE&gt; &gt;&amp; in, </span></span></span><br><span class="line"><span class="params"><span class="function">                   stream&lt;ap_int32&gt;&amp; out)</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> HLS DATAFLOW</span></span><br><span class="line">    <span class="type">static</span> ap_uint&lt;PLIO_SIZE&gt; in_data[IN_BATCH][IN_HEIGHT][IN_WIDTH];</span><br><span class="line">    <span class="type">static</span> ap_uint&lt;FLIO_SIZE&gt; coeffs[CONV_K_HEIGHT][CONV_K_WIDTH];</span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> HLS ARRAY_PARTITION variable=in_data complete</span></span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> HLS ARRAY_PARTITION variable=coeffs complete</span></span><br><span class="line">    <span class="built_in">partition_for_conv2d</span>(in, in_data, coeffs);</span><br><span class="line">    </span><br><span class="line">    hls::stream&lt;ap_uint&lt;FLIO_SIZE&gt; &gt; conv2d_partial_out;</span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> HLS STREAM variable=conv2d_partial_out depth=64</span></span><br><span class="line">    <span class="built_in">conv2dpluscore</span>(in_data, coeffs, conv2d_partial_out);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">conv2dplusbias</span>(conv2d_partial_out, out, bias);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述代码为示例,需要根据实际IP核接口进行修改。可以重用Vivado HLS生成的接口代码。</p>
+<ol start="3">
+<li><strong>使用Vitis统一软件平台编译HLS C++项目,生成xclbin文件</strong></li>
+</ol>
+<p>在Vitis中导入修改后的HLS C++项目,添加自定义PL IP核源文件。设置合适的约束并综合实现,生成xclbin部署文件。</p>
+<ol start="4">
+<li><strong>在PYNQ Notebook中导入xclbin文件,使用hls4ml进行推理</strong></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hls4ml</span><br><span class="line">model = hls4ml.utils.load_model_from_xclbin(<span class="string">&#x27;my_model.xclbin&#x27;</span>)</span><br><span class="line">pred = model.predict(img)</span><br></pre></td></tr></table></figure>
+
+<p>通过以上步骤,即可在PYNQ-Z2上实现包含自定义PL IP核加速的YOLOv5-s推理过程,无需额外编写Python绑定代码。当然,这种方式的灵活性相对较低,如果需要在推理前后插入Python预处理&#x2F;后处理代码,则需要修改HLS C++代码并重新编译模型。</p>
+<p>这种直接修改HLS C++代码的方法的关键在于正确替换原有计算函数为自定义IP核调用,并正确处理数据动态分区。对于大型模型,这可能需要大量的代码修改工作,但同时也最大限度地发挥了FPGA硬件加速的性能优势。</p>
+<p>需要注意的是,以上仅为伪代码,实际使用时还需要根据具体情况调整实现细节,并进行全面的功能和性能验证。总的来说,这种在HLS层面集成PL IP核的方式更加底层和高效,但复杂程度也更高。</p>
+<p>这种方法并不是将整个YOLOv5-s网络完全映射到FPGA的可编程逻辑(PL)上,而是采用了部分offload的策略。</p>
+<p>具体来说:</p>
+<ol>
+<li><p>大部分的网络层(如卷积、BatchNorm等)被hls4ml工具流转换为高效的HLS C++实现,运行在PYNQ的ARM处理系统(PS)端。</p>
+</li>
+<li><p>但是,对于计算量大且可以从FPGA并行计算中获益的关键层(通常是大的卷积层),我们手动将其替换为自定义的PL IP核调用。</p>
+</li>
+<li><p>这些自定义PL IP核利用FPGA的并行计算资源(DSP、LUT等)实现了高度优化和并行化的加速设计。</p>
+</li>
+<li><p>在执行推理时,大部分层由HLS C++代码在PS端执行,只有少数计算密集型层由PL IP核在FPGA硬件上加速执行,输入输出通过DDR传递数据。</p>
+</li>
+</ol>
+<p>这种策略兼顾了:</p>
+<ul>
+<li>保留HLS C++实现的简单性,避免将整个大型网络手动移植到FPGA</li>
+<li>对计算密集型层使用高度优化的PL IP核加速,充分利用FPGA的并行计算能力</li>
+</ul>
+<p>如果完全不使用PL IP核,那么整个网络的执行都将在ARM CPU上进行,性能将受到较大限制。但如果完全将整个网络映射到FPGA,那无疑工作量会非常大,而且部分算力较轻的层在FPGA上执行未必会更快。</p>
+<p>所以,合理的做法是在ARM CPU与FPGA之间寻找一个平衡点,对于计算密集型层offload到FPGA加速,其他层在CPU上执行。这样可以在开发复杂度和硬件加速性能之间取得很好的平衡。</p>
+<p>当然,如果您对性能要求不是很高,或者更追求开发便利性,也完全可以暂时不使用PL IP核加速,先在PS端完成端到端的网络部署,之后再根据需要逐步加入PL加速部分。这两种设计思路各有特点,需要根据具体情况权衡选择。</p>
+<p>对的,第二种方法就是需要专门考虑在PL端使用FPGA硬件资源对一些计算层进行加速。</p>
+<p>具体来说,第二种方法的流程是:</p>
+<ol>
+<li>使用hls4ml工具将ONNX模型转换为HLS C++代码项目</li>
+<li>分析模型,识别出计算量大、需要加速的关键层(通常是大的卷积层)</li>
+<li>针对这些需要加速的层,设计高效的PL IP核,利用FPGA的并行计算资源(DSP、LUT等)</li>
+<li>修改HLS C++代码,将原有的计算函数替换为对应的PL IP核调用接口</li>
+<li>使用Vitis工具流综合并生成包含PL IP核的xclbin部署文件</li>
+<li>在PYNQ Notebook中导入xclbin,通过hls4ml库进行模型推理,此时会自动调用PL IP核执行加速</li>
+</ol>
+<p>所以在这种方式下,专门针对需要加速的关键层设计PL硬件IP核是必须的环节。这不仅需要理解模型结构,还需要具备FPGA设计和优化的能力。</p>
+<p>相比第一种方法通过软件绑定PL IP核,这种直接在HLS层面集成更底层、更高效,可以最大限度发挥FPGA硬件加速的潜力。但与此同时,它也有以下几个挑战:</p>
+<ol>
+<li>工作量大,需要修改大量HLS C++代码</li>
+<li>灵活性较低,难以动态插入Python预&#x2F;后处理代码</li>
+<li>需要对HLS C++代码和FPGA PL硬件设计都有深入理解</li>
+</ol>
+<p>总的来说,第二种方法的核心就是在HLS层面直接集成自定义PL IP核,以换取更高的推理加速性能,但同时也付出了更高的开发复杂度和灵活性受限的代价。</p>
+<p>相较之下,第一种方法更容易上手,可以先完成纯软件部署,后续再集成硬件加速;但性能上未必能达到第二种方法的优化程度。</p>
+<p>所以在选择方案时,需要根据具体情况,权衡开发复杂度、灵活性和加速性能的取舍。两种方案均有其合理的适用场景。</p>
+<h2 id="将Yolov5s模型转换为onnx"><a href="#将Yolov5s模型转换为onnx" class="headerlink" title="将Yolov5s模型转换为onnx"></a>将Yolov5s模型转换为onnx</h2>
         </div>
 
         
