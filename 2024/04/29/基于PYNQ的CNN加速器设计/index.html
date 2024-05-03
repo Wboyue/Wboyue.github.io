@@ -852,7 +852,20 @@
 <p>总的来说,第二种方法的核心就是在HLS层面直接集成自定义PL IP核,以换取更高的推理加速性能,但同时也付出了更高的开发复杂度和灵活性受限的代价。</p>
 <p>相较之下,第一种方法更容易上手,可以先完成纯软件部署,后续再集成硬件加速;但性能上未必能达到第二种方法的优化程度。</p>
 <p>所以在选择方案时,需要根据具体情况,权衡开发复杂度、灵活性和加速性能的取舍。两种方案均有其合理的适用场景。</p>
-<h2 id="将Yolov5s模型转换为onnx"><a href="#将Yolov5s模型转换为onnx" class="headerlink" title="将Yolov5s模型转换为onnx"></a>将Yolov5s模型转换为onnx</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42334072/article/details/106732404?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171463208116800188567279%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=171463208116800188567279&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-106732404-null-null.142%5Ev100%5Econtrol&utm_term=pynq-z2%E4%B8%8A%E5%AE%9E%E7%8E%B0yolov3&spm=1018.2226.3001.4187">基于PYNQ-Z2复现yolov2</a>,</p>
+<h2 id="将Yolov5s模型转换为onnx"><a href="#将Yolov5s模型转换为onnx" class="headerlink" title="将Yolov5s模型转换为onnx"></a>将Yolov5s模型转换为onnx</h2><h2 id="在PYNQ-Z2上安装PyTorch框架"><a href="#在PYNQ-Z2上安装PyTorch框架" class="headerlink" title="在PYNQ-Z2上安装PyTorch框架"></a>在PYNQ-Z2上安装PyTorch框架</h2><p>参考<a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/install-pytorch-on-pynq/5499">Install PyTorch on PYNQ</a>，我的PYNQ img版本是v2.7</p>
+<img src="屏幕截图 2024-05-03 074649.png"/>
+报错：
+<img src="image-20240503075322206.png"/>
+`pip install --user ./torch-1.13.1-cp38-cp38-manylinux2014_aarch64.whl`
+<img src="image-20240503081620142.png" alt="image-20240503081620142" />
+平台不支持，尝试torch-1.11.0也不行，更换img版本到3.0.1，还是不行。
+仔细看教程中的板子是PYNQ-ZU，而我的是PYNQ-Z2，芯片架构不同。
+针对PYNQ-Z2也许没有合适的wheel。
+
+<p>##在PYNQ上安装ONNX</p>
+<p>1、用C++重写yolov5，关键部分调用python。</p>
+<p>2、</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42334072/article/details/106732404?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171463208116800188567279%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=171463208116800188567279&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-106732404-null-null.142%5Ev100%5Econtrol&utm_term=pynq-z2%E4%B8%8A%E5%AE%9E%E7%8E%B0yolov3&spm=1018.2226.3001.4187">基于PYNQ-Z2复现yolov2</a>,</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43334954/article/details/109106489?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-109106489-blog-106223028.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-109106489-blog-106223028.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=11">基于PYNQ-Z2（7020）复现Yolo_v2</a></p>
 
         </div>
