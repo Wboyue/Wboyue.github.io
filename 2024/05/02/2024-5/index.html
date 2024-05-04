@@ -678,12 +678,27 @@
         <div class="post-content">
             <p>持续修改中………..<br>如果你开始频繁地思考人生、生命的意义，那么也许你最近过得并不快乐。</p>
 <hr>
-<h1 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h1><p>6:14醒来，睡不下去了。脑子疼，难道要长脑子了？！<br><img src="微信图片_20240503065918.jpg"/><br>不知道吃啥，随便买<br><img src="微信图片_20240503065922.jpg"/><br><br><br><img src="微信图片_20240503065905.jpg"/></p>
-<p>不说了，搞学习，搞钱🥲</p>
-<p>—&gt;继续尝试在PYNQ上安装PyTorch,参考<a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/install-pytorch-on-pynq/5499">Install PyTorch on PYNQ</a>。结果：PYNQ-Z2平台不兼容。<br>在<a target="_blank" rel="noopener" href="https://discuss.pynq.io/">PYNQ Support</a>游荡了大半个上午。<br>大多数人都使用官方提供的DPU、FINN、QNN来实现他们的目标检测任务([Can I import torch on PYNQ?(<a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/can-i-import-torch-on-pynq/1540)]%E3%80%82%E8%80%8C%E8%BF%99%E4%B8%8D%E6%98%AF%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E3%80%82">https://discuss.pynq.io/t/can-i-import-torch-on-pynq/1540)]。而这不是我想要的。</a><br><a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/a-no-cross-compile-of-pytorch-and-opencv-using-aws-a1-instances/717">A (No-Cross) Compile of PyTorch and OpenCV using AWS A1 instances</a>非交叉编译PyTorch和OpenCV。好吧，它的目标平台是Zynq UltraScale+ (ZU+) 。</p>
-<p>怎么才能在PYNQ-Z2上实现ps端的Yolov5的推理呢，怎么截断推理的过程，将数据流传到PL端加速，然后又应该如何知道何时计算结束，回传数据？<br>Yolov5采用Pytorch框架，但是torch不能在pynq-z2上安装。<br>难道真要用C++写yolov5正向推理？？或者试试用darknet框架？？又或者试试ONNX，onnxruntime(得去找几个轮子.whl).</p>
-<p>偶然间看到了<a target="_blank" rel="noopener" href="https://github.com/dhm2013724/yolov2_xilinx_fpga">yolov2_xilinx_fpga</a>这个项目，得去试一下。(hook)</p>
-<p>在PYNQ-Z2上安装Tensorflow、keras？</p>
+<h1 id="5-4"><a href="#5-4" class="headerlink" title="5.4"></a>5.4</h1><p>昨晚十一点回宿舍，刷完牙就躺下了，一早起来已经是8：11.<br>上午继续在pynq-z2上安装TensorFlow的目标中挣扎，最终得出的结论是不能继续在这个坑里呆下去了，也许以后会再来看看，但不是现在主要的问题。跟多细节在这里：<a href="/2024/04/29/%E5%9F%BA%E4%BA%8EPYNQ%E7%9A%84CNN%E5%8A%A0%E9%80%9F%E5%99%A8%E8%AE%BE%E8%AE%A1/" title="基于PYNQ的CNN加速器设计">在PYNQ上安装TensorFlow</a></p>
+<h1 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h1><p>6:14醒来，睡不下去了。脑子疼，难道要长脑子了？！</p>
+<center>
+<img src="微信图片_20240503065918.jpg" width="800"/>
+</center>
+不知道吃啥，随便买
+<center>
+<img src="微信图片_20240503065922.jpg" width="800" />
+<img src="微信图片_20240503065905.jpg" width="800" />
+</center>
+不说了，搞学习，搞钱🥲
+--->继续尝试在PYNQ上安装PyTorch,参考[Install PyTorch on PYNQ](https://discuss.pynq.io/t/install-pytorch-on-pynq/5499)。结果：PYNQ-Z2平台不兼容。
+    在[PYNQ Support](https://discuss.pynq.io/)游荡了大半个上午。大多数人都使用官方提供的DPU、FINN、QNN来实现他们的目标检测任务([Can I import torch on PYNQ?(https://discuss.pynq.io/t/can-i-import-torch-on-pynq/1540)]。而这不是我想要的。[A (No-Cross) Compile of PyTorch and OpenCV using AWS A1 instances](https://discuss.pynq.io/t/a-no-cross-compile-of-pytorch-and-opencv-using-aws-a1-instances/717)非交叉编译PyTorch和OpenCV。好吧，它的目标平台是Zynq UltraScale+ (ZU+) 。
+​	怎么才能在PYNQ-Z2上实现ps端的Yolov5的推理呢，怎么截断推理的过程，将数据流传到PL端加速，然后又应该如何知道何时计算结束，回传数据？
+Yolov5采用Pytorch框架，但是torch不能在pynq-z2上安装。
+难道真要用C++写yolov5正向推理？？或者试试用darknet框架？？又或者试试ONNX，onnxruntime(得去找几个轮子.whl).
+​	偶然间看到了[yolov2_xilinx_fpga](https://github.com/dhm2013724/yolov2_xilinx_fpga)这个项目，得去试一下。(hook)在PYNQ-Z2上安装Tensorflow、keras？[基于pynq的数字识别神经网络加速器设计](https://blog.csdn.net/weixin_45935942/article/details/122662678?ops_request_misc=&request_id=&biz_id=102&utm_term=pynq%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-122662678.142^v100^control&spm=1018.2226.3001.4187)。
+
+<p>下午：睡觉–刷qq–睡觉–刷qq，时序约束好像问的比较多，DC综合脚本还需要复习一下。另外RISC-V CPU的完善任务也一直拖着，实在没时间干了，希望能早点搞完吧。</p>
+<img src="微信图片_20240504113905.jpg" alt="微信图片_20240504113905" style="zoom: 50%;" />
+
 <h1 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h1><p>忘了</p>
 <p><img src="https://dl4.weshineapp.com/gif/20171024/88aa1edcf38989df867194b31c37dae1.gif?f=micro_ZW1tbW0=" alt="img"></p>
 <p>At the beginning……<br>    想起几个月前朋友喊我一起整个“学术装逼界面”，我才发现原来大学的时候已经做过一个，只是之后一直没有真正写过什么内容，慢慢的就被遗忘了。hhhhhhh，在我的意料之内，毕竟我是从来不喜欢写那种看起来花哨整洁的笔记的，因为我懒。<br>    先来说说为什么要回过头来重新做这件事吧：可能最大的原因也是为了展示自己的学习内容吧(为了装逼😜)，正好自己这两个月来也确实记录了一个非常凌乱的文档记录(各种教程、手册的地址)，想想也是该整理整理了。最后一个理由是顺便记录生活核真实的想法。<br>    人生就像在一本空白草稿本上记录着自己的爱情、金钱、事业、家庭、生活和梦想。也许需要翻过大半本才能看见一段精彩的话。不可置疑的，我们会遇到各种各样的困难和难以决定的选择。也许我们过去的决定在那时看起来是最好的选择，但是仍然可能给未来埋下隐患，成为将来不得不面对的一个棘手的问题。对于我自己，希望不要受到太多世俗的影响，选择伟大，选择信仰。做一个勇敢的人，坚持走下去，走到尽头，无论路的尽头是花海，还是悬崖，勇敢的跳下去吧，拥抱生命也拥抱死亡。（为什么标点符号看起来是浮着的😳😳，插个眼，以后有时间再改吧😭😭😭）</p>
