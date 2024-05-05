@@ -13,7 +13,7 @@
 
 
 
-<title>2024-5 | Edith</title>
+<title>GNU/Linux | Edith</title>
 
 
 
@@ -651,7 +651,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">2024-5</h1>
+            <h1 class="post-title">GNU/Linux</h1>
             
                 <div class="post-meta">
                     
@@ -660,7 +660,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">May 2, 2024&nbsp;&nbsp;9:48:45</a>
+                        Date: <a href="#">May 5, 2024&nbsp;&nbsp;16:19:12</a>
                         </span>
                     
                     
@@ -676,47 +676,107 @@
         </header>
 
         <div class="post-content">
-            <p>持续修改中………..<br>如果你开始频繁地思考人生、生命的意义，那么也许你最近过得并不快乐。</p>
-<hr>
-<h1 id="5-5"><a href="#5-5" class="headerlink" title="5.5"></a>5.5</h1><p>去看了看<a target="_blank" rel="noopener" href="https://programmercarl.com/">代码随想录</a></p>
-<h1 id="5-4"><a href="#5-4" class="headerlink" title="5.4"></a>5.4</h1><p>昨晚十一点回宿舍，刷完牙就躺下了，一早起来已经是8：11.<br>上午继续在PYNQ-Z2上安装TensorFlow的目标中挣扎，最终得出的结论是不能继续在这个坑里呆下去了，也许以后会再来看看，但不是现在主要的问题。跟多细节在这里：<a href="/2024/04/29/%E5%9F%BA%E4%BA%8EPYNQ%E7%9A%84CNN%E5%8A%A0%E9%80%9F%E5%99%A8%E8%AE%BE%E8%AE%A1/" title="基于PYNQ的CNN加速器设计">在PYNQ上安装TensorFlow</a></p>
-<p>中午在罗森、全家、盒马转了半小时，每天吃什么也是一个好问题，最后买了盒马的土豆红肠色拉和全家的炸鸡腿。</p>
+            <h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a><center>vim</center></h1><h2 id="vim使用"><a href="#vim使用" class="headerlink" title="vim使用"></a>vim使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vimtutor</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>移动光标</li>
+</ol>
+<ul>
+<li>“H”键左移光标，”J”键下移光标，”K”键上移光标，”L”键右移光标。（仅在Normal model下可用）</li>
+<li>方向键也可移动光标。（Normal model 或 Insert 状态下都可以）</li>
+</ul>
+<ol start="2">
+<li><pre><code class="shell">:q! &lt;ENTER&gt; discards any changes you made.不保存退出
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 删除光标处的字符：按下“X”。（Normal model下）</span><br><span class="line"></span><br><span class="line">   &lt;img src=&quot;image-20220530103801848.png&quot; /&gt;</span><br><span class="line"></span><br><span class="line">   &lt;img src=&quot;image-20220530103906619.png&quot; alt=&quot;image-20220530103906619&quot; /&gt;</span><br><span class="line"></span><br><span class="line">4. “I”按下i，进入INSERT状态。&lt;img src=&quot;image-20220530103536716.png&quot; alt=&quot;image-20220530103536716&quot; /&gt;</span><br><span class="line">    此时可以在光标所在处输入。</span><br><span class="line"></span><br><span class="line">  &lt;img src=&quot;image-20220530103925546.png&quot; alt=&quot;image-20220530103925546&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;image-20220530104002613.png&quot; alt=&quot;image-20220530104002613&quot; /&gt;</span><br><span class="line"></span><br><span class="line">5. “A”进入INSERT，光标从按下A时所在的字符向后退一格扩展输入。A=&gt;appending</span><br><span class="line"></span><br><span class="line">   &lt;img src=&quot;image-20220530104519118.png&quot; alt=&quot;image-20220530104519118&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;image-20220530104559395.png&quot; alt=&quot;image-20220530104559395&quot; /&gt;</span><br><span class="line"></span><br><span class="line">6. ```shell</span><br><span class="line">   :wq           save file with changes and exit Vim </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">                               Lesson 1 SUMMARY</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  1. The cursor is moved using either the arrow keys or the hjkl keys.</span><br><span class="line">         h (left)       j (down)       k (up)       l (right)</span><br><span class="line"></span><br><span class="line">  2. To start Vim from the shell prompt type:  vim FILENAME &lt;ENTER&gt;</span><br><span class="line"></span><br><span class="line">  3. To exit Vim type:     &lt;ESC&gt;   :q!   &lt;ENTER&gt;  to trash all changes.</span><br><span class="line">             OR type:      &lt;ESC&gt;   :wq   &lt;ENTER&gt;  to save the changes.</span><br><span class="line"></span><br><span class="line">  4. To delete the character at the cursor type:  x</span><br><span class="line"></span><br><span class="line">  5. To insert or append text type:</span><br><span class="line">         i   type inserted text   &lt;ESC&gt;         insert before the cursor</span><br><span class="line">         A   type appended text   &lt;ESC&gt;         append after the line</span><br><span class="line"></span><br><span class="line">NOTE: Pressing &lt;ESC&gt; will place you in Normal mode or will cancel</span><br><span class="line">      an unwanted and partially completed command.</span><br><span class="line"></span><br><span class="line">Now continue with lesson 2.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<img src="Screenshot from 2022-08-16 14-06-43.png" alt="Screenshot from 2022-08-16 14-06-43" />
+
+<p>![Screenshot from 2022-08-16 14-07-48](Screenshot from 2022-08-16 14-07-48.png)</p>
 <center>
-<img src="微信图片_20240504222045.jpg" alt="微信图片_20240504222045" width="700"/>
+<img src="Screenshot from 2022-08-16 14-31-27.png" width="1000">
 </center>
 
-<p>想哭，难吃到哭了，和蔬菜沙拉比差远了😭😭。</p>
-<p>现在是21：20，学着学着就emo了，五一过去4天了，也在办公室里待了4天，但是怎么还是啥也没干的感觉。论文看着看着就迷失了，各种理论，设计细节，只是了解了个大概也没有深入推理。而是一个“我先选择相信你写的东西”这样的状态。看起来大家都是写个原理，然后写个表面的框架变化，不写具体的工程细节。CSDN、PYNQ Tutorial、Github翻了个遍，论文、UG、manual也是翻来翻去的看。不得不说，和我预想的一样，这确实是一个折磨人的过程，甚至内心早就变得毫无波澜。</p>
-<p>回想大学的时候，我经常会提醒自己世界这么大，值得看值得做的事情有很多。不论是为了赚钱还是为了其他原因什么，我都不希望自己沉迷于技术，很多事情有一个表象的认识和稍微深入的了解就够了，没必要花时间去纠结于细节，毕竟时间是最宝贵的。然而太多时候不得不深入其中，去一行一行推导，一句一句斟酌。</p>
-<p>okey-dokey，话说回来，毫无征兆地，路走着走着就给自己走窄了。但是想要拨乱反正是非常困难的，拥有这样的勇气其实是最简单的事情，而且仅仅是一个开始，需要更多考虑的是，你能接受最坏情况吗？你能像自己预想的那样，坚韧的去面对你的决定给你带来的各种困难吗？当你做出了一系列的事情后，最坏情况不得不发生时，你会怀着怎样的心情？不过我清楚的知道，即使再来一遍我还是会再一次的走上现在这条路，一切看起来难以避免的，时针走过了十二点，还是会一边又一边地走过十二点，这就是命运吧，明明知道却又是无法逃避的东西。</p>
-<p>城市充斥着愚昧，毫无信仰的人群川流不息，生活在其中有什么意义？<br>答案是因为你的存在，无可替代的存在，因为伟大的戏剧正在进行，因为你可以奉献一首诗。</p>
-<p>回宿舍做了两题室友给的行测。聊起了实习、软件，他们实验室都是找的软件算法岗，听完感觉所里在计算机行业还是有点地位的。至少比ic设计行业更有地位。他们一般用python。感觉主要是刷leetcode，和代码随想录，主要是数据结构和算法分析的内容，看起来我也应该去复习一下数据结构，投一个试试水。</p>
-<p>数字ic前端设计–&gt;更卷，但学了挺多</p>
-<p>软件算法岗——-&gt;没有ic卷，有基础但不多</p>
-<p>两手准备好累，毕竟还有课题要搞，课题又是深度学习模型硬件部署加速方向的（可以试试AI加速器架构设计、嵌入式软件开发、（大模型算子开发也是一个方向，但是可能差的有些远了））。</p>
-<p>明天搞个面向软件算法岗的简历，海投试试。</p>
-<h1 id="5-3"><a href="#5-3" class="headerlink" title="5.3"></a>5.3</h1><p>6:14醒来，睡不下去了。脑子疼，难道要长脑子了？！</p>
-<center>
-<img src="微信图片_20240503065918.jpg" width="800"/>
-</center>
-不知道吃啥，随便买
-<center>
-<img src="微信图片_20240503065922.jpg" width="800" />
-<img src="微信图片_20240503065905.jpg" width="800" />
-</center>
-不说了，搞学习，搞钱🥲
---->继续尝试在PYNQ上安装PyTorch,参考[Install PyTorch on PYNQ](https://discuss.pynq.io/t/install-pytorch-on-pynq/5499)。结果：PYNQ-Z2平台不兼容。
 
-<p>在<a target="_blank" rel="noopener" href="https://discuss.pynq.io/">PYNQ Support</a>游荡了大半个上午。大多数人都使用官方提供的DPU、FINN、QNN来实现他们的目标检测任务(<a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/can-i-import-torch-on-pynq/1540">Can I import torch on PYNQ?</a>。而这不是我想要的。<a target="_blank" rel="noopener" href="https://discuss.pynq.io/t/a-no-cross-compile-of-pytorch-and-opencv-using-aws-a1-instances/717">A (No-Cross) Compile of PyTorch and OpenCV using AWS A1 instances</a>非交叉编译PyTorch和OpenCV。好吧，它的目标平台是Zynq UltraScale+ (ZU+) 。</p>
-<p>怎么才能在PYNQ-Z2上实现ps端的Yolov5的推理呢，怎么截断推理的过程，将数据流传到PL端加速，然后又应该如何知道何时计算结束，回传数据？<br>Yolov5采用Pytorch框架，但是torch不能在pynq-z2上安装。</p>
-<p>难道真要用C++写yolov5正向推理？？或者试试用darknet框架？？又或者试试ONNX，onnxruntime(得去找几个轮子.whl).偶然间看到了<a target="_blank" rel="noopener" href="https://github.com/dhm2013724/yolov2_xilinx_fpga">yolov2_xilinx_fpga</a>这个项目，得去试一下。(hook)在PYNQ-Z2上安装Tensorflow、keras？<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45935942/article/details/122662678?ops_request_misc=&request_id=&biz_id=102&utm_term=pynq%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-122662678.142%5Ev100%5Econtrol&spm=1018.2226.3001.4187">基于pynq的数字识别神经网络加速器设计</a>。</p>
-<p>下午：睡觉–刷qq–睡觉–刷qq，时序约束好像问的比较多，DC综合脚本还需要复习一下。另外RISC-V CPU的完善任务也一直拖着，实在没时间干了，希望能早点搞完吧。</p>
-<p>晚上刷了一晚上qq。持续焦虑中……</p>
-<img src="微信图片_20240504113905.jpg" alt="微信图片_20240504113905" style="zoom: 50%;" />
 
-<h1 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h1><p>忘了</p>
-<p><img src="https://dl4.weshineapp.com/gif/20171024/88aa1edcf38989df867194b31c37dae1.gif?f=micro_ZW1tbW0=" alt="img"></p>
-<p>At the beginning……<br>    想起几个月前朋友喊我一起整个“学术装逼界面”，我才发现原来大学的时候已经做过一个，只是之后一直没有真正写过什么内容，慢慢的就被遗忘了。hhhhhhh，在我的意料之内，毕竟我是从来不喜欢写那种看起来花哨整洁的笔记的，因为我懒。<br>    先来说说为什么要回过头来重新做这件事吧：可能最大的原因也是为了展示自己的学习内容吧(为了装逼😜)，正好自己这两个月来也确实记录了一个非常凌乱的文档记录(各种教程、手册的地址)，想想也是该整理整理了。最后一个理由是顺便记录生活核真实的想法。<br>    人生就像在一本空白草稿本上记录着自己的爱情、金钱、事业、家庭、生活和梦想。也许需要翻过大半本才能看见一段精彩的话。不可置疑的，我们会遇到各种各样的困难和难以决定的选择。也许我们过去的决定在那时看起来是最好的选择，但是仍然可能给未来埋下隐患，成为将来不得不面对的一个棘手的问题。对于我自己，希望不要受到太多世俗的影响，选择伟大，选择信仰。做一个勇敢的人，坚持走下去，走到尽头，无论路的尽头是花海，还是悬崖，勇敢的跳下去吧，拥抱生命也拥抱死亡。（为什么标点符号看起来是浮着的😳😳，插个眼，以后有时间再改吧😭😭😭）</p>
+
+<h2 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp /etc/vim/vimrc ~/.vimrc</span><br><span class="line">cd ~</span><br><span class="line">ls -a</span><br><span class="line">vim .vimrc</span><br></pre></td></tr></table></figure>
+
+<h3 id="vim下的工具"><a href="#vim下的工具" class="headerlink" title="vim下的工具"></a>vim下的工具</h3><h4 id="ctags"><a href="#ctags" class="headerlink" title="ctags"></a>ctags</h4><div style="page-break-after:always"></div>
+
+<h1 id="GNU-Linux"><a href="#GNU-Linux" class="headerlink" title="GNU&#x2F;Linux"></a>GNU&#x2F;Linux</h1><p>samll tutorial : <a target="_blank" rel="noopener" href="https://ysyx.oscc.cc/docs/ics-pa/linux.html">https://ysyx.oscc.cc/docs/ics-pa/linux.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://linux.vbird.org/">https://linux.vbird.org/</a></p>
+<h3 id="命令行技巧-https-linux-cn-article-6160-1-html"><a href="#命令行技巧-https-linux-cn-article-6160-1-html" class="headerlink" title="命令行技巧  https://linux.cn/article-6160-1.html"></a>命令行技巧  <a target="_blank" rel="noopener" href="https://linux.cn/article-6160-1.html">https://linux.cn/article-6160-1.html</a></h3><ul>
+<li>–help 查看简单的帮助</li>
+<li>利用<code>man</code>查看详细的手册（manual）</li>
+<li>End 移动光标到本行结尾</li>
+<li>PgUp 向上翻页</li>
+<li>PaDN 向下翻页</li>
+<li>ctrl + c 终止当前程序</li>
+<li>未输入状态下连按<strong>两次</strong> <code>Tab</code> 列出所有可用命令</li>
+<li>已输入部分命令名或文件名，按 <code>Tab</code> 进行自动补全，多用你就肯定会喜欢的了。</li>
+<li><code>cat</code> 用于输出文件内容到 Terminal 。</li>
+<li>当一个文档太长时， <code>cat</code> 只能展示最后布满屏幕的内容，前面的内容是不可见的。这时候可用 <code>more</code> 逐行显示内容。</li>
+<li><code>less</code> 支持上下滚动查看内容，而 <code>more</code> 只支持逐行显示。</li>
+<li><code>mount</code>挂载，<code>umount</code>卸载挂载点。</li>
+<li><code>ln</code> 主要用于在两个文件中创建链接，链接又分为 <code>Hard Links</code> (硬链接)和 <code>Symbolic Links</code> (符号链接或软链接)，其中默认为创建<strong>硬链接</strong>，使用 <code>-s</code> 参数指定创建软链接。<ul>
+<li>硬链接主要是增加一个文件的链接数，只要该文件的链接数不为 <code>0</code> ，该文件就不会被物理删除，所以删除一个具有多个硬链接数的文件，必须删除所有它的硬链接才可删除。</li>
+<li>软链接简单来说是为文件创建了一个类似快捷方式的东西，通过该链接可以访问文件，修改文件，但不会增加该文件的链接数，删除一个软链接并不会删除源文件，即使源文件被删除，软链接也存在，当重新创建一个同名的源文件，该软链接则指向新创建的文件。</li>
+<li>硬链接只可链接两个文件，不可链接目录，而软链接可链接目录，所以软链接是非常灵活的。</li>
+</ul>
+</li>
+<li><code>chown</code> 改变文件所有者以及所在组。</li>
+<li><code>chmod</code> 改变权限</li>
+<li><code>whereis</code> 用于查找文件、手册等。</li>
+<li><code>find</code> 也用于查找文件，但更为强大，支持正则，并且可将查找结果传递到其他命令。</li>
+<li><code>wget</code> 是一个下载工具，简单强大。</li>
+<li><code>pwd</code>能够列出当前所在的目录.</li>
+<li><code>touch NEWFILE</code>可以创建一个内容为空的新文件<code>NEWFILE</code>, 若<code>NEWFILE</code>已存在, 其内容不会丢失.</li>
+</ul>
+<p>统计当前路径下的代码行数：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . | grep &#x27;\.c$\|\.h$&#x27; | xargs wc -l</span><br></pre></td></tr></table></figure>
+
+<p>例：<img src="Screenshot from 2022-08-17 13-58-26.png" alt="Screenshot from 2022-08-17 13-58-26" /></p>
+<img src="Screenshot from 2022-08-17 13-58-46.png" alt="Screenshot from 2022-08-17 13-58-46" />
+
+
+
+<p>列出当前目录下的所有文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find .</span><br></pre></td></tr></table></figure>
+
+<img src="Screenshot from 2022-08-17 14-05-39.png" alt="Screenshot from 2022-08-17 14-05-39" />
+
+<p>如果文件过多，按<code>Ctrl + R</code>退出。</p>
+<p>grep简介：</p>
+<p><code>man grep</code>查看grep manual 。</p>
+<p>DESCRIPTION<br>  grep  searches  for  PATTERNS  in  each  FILE.  PATTERNS is one or more patterns separated by newline characters, and  grep  prints  each  line that  matches a pattern.  Typically PATTERNS should be quoted when grep is used in a shell command.<br>  A FILE of “-”  stands  for  standard  input.   If  no  FILE  is  given,recursive  searches  examine  the  working  directory, and nonrecursive searches read standard input.<br>  In addition, the variant programs egrep, fgrep and rgrep are  the  same as  grep -E,  grep -F,  and  grep -r, respectively.  These variants are deprecated, but are provided for backward compatibility.</p>
+<h3 id="正则表达式-Regular-expression"><a href="#正则表达式-Regular-expression" class="headerlink" title="正则表达式  Regular expression"></a>正则表达式  Regular expression</h3><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Regular_expression">https://en.wikipedia.org/wiki/Regular_expression</a><br>简写为regex 或 regexp。有时也被称为rational expression。是文本中指定搜索模式的字符串。关键词：过滤、分析、管理。<br><a target="_blank" rel="noopener" href="https://linux.vbird.org/linux_basic/centos7/0330regularex.php">https://linux.vbird.org/linux_basic/centos7/0330regularex.php</a></p>
+<h3 id="du命令"><a href="#du命令" class="headerlink" title="du命令"></a>du命令</h3><p>在&#x2F;usr&#x2F;share目录下，为什么<code>du -sc .</code>与<code>du -sc /usr/share/*</code>输出的结果不同？<br>![Screenshot from 2022-08-17 16-56-53](Screenshot from 2022-08-17 16-56-53.png)</p>
+<h2 id="man-（manual）-an-interface-to-the-system-reference-manuals"><a href="#man-（manual）-an-interface-to-the-system-reference-manuals" class="headerlink" title="man （manual） - an interface to the system reference manuals"></a>man （manual） - an interface to the system reference manuals</h2><p>man can tell you how to use other commands. Learn to use man , learn to use everything.</p>
+<h3 id="man-帮助"><a href="#man-帮助" class="headerlink" title="man 帮助"></a>man 帮助</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">man man </span><br><span class="line">press h</span><br></pre></td></tr></table></figure>
+<h3 id="Synopsis"><a href="#Synopsis" class="headerlink" title="Synopsis"></a>Synopsis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">man [man options] [[section] page ...] ...</span><br><span class="line">man -k [apropos options] regexp ...</span><br><span class="line">man -K [man options] [section] term ...</span><br><span class="line">man -f [whatis options] page ...</span><br><span class="line">man -l [man options] file ...</span><br><span class="line">man -w|-W [man options] page ...</span><br></pre></td></tr></table></figure>
+
+<p>参数 page 通常是程序名、函数名、name of utility。Section，参数指定manual的section。注意：manual page可能存在于多个section中。</p>
+<p>more detail：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">man  is  the system&#x27;s manual pager.  Each page argument given to man is normally</span><br><span class="line">the name of a program, utility or function.  The  manual  page  associated  with</span><br><span class="line">each  of  these  arguments is then found and displayed.  A section, if provided,</span><br><span class="line">will direct man to look only in that section of the manual.  The default  action</span><br><span class="line">is to search in all of the available sections following a pre-defined order (see</span><br><span class="line">DEFAULTS), and to show only the first page found, even if page exists in several</span><br><span class="line">sections.</span><br></pre></td></tr></table></figure>
+
+<p>按照9种类型讲manual分成了9个section。manual的section编号与对应的页面类型关系如下表所示：</p>
+<pre><code>   1   Executable programs or shell commands
+   2   System calls (functions provided by the kernel)
+   3   Library calls (functions within program libraries)
+   4   Special files (usually found in /dev)
+   5   File formats and conventions, e.g. /etc/passwd
+   6   Games
+   7   Miscellaneous (including  macro  packages  and  conventions),  e.g.  man(7),
+       groff(7)
+   8   System administration commands (usually only for root)
+   9   Kernel routines [Non standard]
+
+   A manual page consists of several sections.
+</code></pre>
 
         </div>
 
@@ -731,7 +791,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2024/05/02/2024-5/">http://example.com/2024/05/02/2024-5/</a></span>
+                        <span><a href="http://example.com/2024/05/05/GNU-Linux/">http://example.com/2024/05/05/GNU-Linux/</a></span>
                     </p>
                 
                 
@@ -768,10 +828,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2024/05/05/%E5%89%AA%E6%9E%9D/">剪枝</a>
             
-            
-            <a class="next" rel="next" href="/2024/05/01/Git/">Git</a>
+            <a class="next" rel="next" href="/2024/05/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/">机器学习算法</a>
             
         </section>
 
