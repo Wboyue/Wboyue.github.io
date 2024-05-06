@@ -713,6 +713,33 @@ Fig.分数分频的参考结构框图
 </blockquote>
 <p>为了解决这些同步问题,通常需要采用一些同步电路设计技术,如握手机制、同步器(Synchronizer)、格雷码(Gray Code)编码等。这些技术可以确保在时钟域之间传输数据时,每一个比特位只有一个发生翻转,从而避免临时不一致的状态出现。合理的同步电路设计对于可靠的跨时钟域数据传输至关重要。</p>
 <p>FIFO计数器指针的另一种常见实现方法是使用格雷码计数器。格雷码在每次时钟转换时只允许改变一位，从而消除了与试图在同一时钟沿同步多个变化信号相关的问题。</p>
+<h1 id="RAM和寄存器"><a href="#RAM和寄存器" class="headerlink" title="RAM和寄存器"></a>RAM和寄存器</h1><p>在FPGA上实现RAM和寄存器时,它们会使用FPGA芯片上不同的硬件资源。</p>
+<ol>
+<li>RAM在FPGA上的实现:</li>
+</ol>
+<ul>
+<li>通常使用FPGA芯片上内置的块RAM(Block RAM)资源实现较大的RAM存储器。</li>
+<li>块RAM是由FPGA芯片上预制的静态RAM模块组成的。</li>
+<li>一个FPGA芯片包含数量有限的块RAM资源,数量和大小因芯片型号而异。</li>
+</ul>
+<ol start="2">
+<li>寄存器在FPGA上的实现:</li>
+</ol>
+<ul>
+<li>寄存器通常使用FPGA芯片上可编程的逻辑资源(如查找表LUT和触发器)来实现。</li>
+<li>可编程逻辑资源可以配置为各种组合逻辑和时序逻辑电路,包括寄存器。</li>
+<li>相比块RAM,FPGA上的可编程逻辑资源数量更多,可实现更多更小的分布式RAM和寄存器。<br>因此,在FPGA上实现较大的RAM存储器时,优先选用块RAM资源;而实现少量的小型寄存器时,则使用可编程逻辑资源。合理利用FPGA不同的硬件资源可以获得更优的性能、资源利用率和功耗特性。</li>
+</ul>
+<p>在时序约束过程中,插入buffer(缓冲器)以满足setup和hold时间的要求,主要有以下几个原因:</p>
+<ol>
+<li>减小数据路径的延迟<br>当数据路径的延迟过长时,可能会导致无法满足setup和hold时间的要求。插入buffer可以将较长的数据路径分割成多个较短的路径,从而减小每个子路径的延迟,有助于满足时序约束。</li>
+<li>改善信号的时序特性<br>不同的信号在芯片内部的走线路径不同,可能会导致不同的延迟。插入buffer可以对信号进行重驱动和重新同步,从而改善信号的时序特性,减小路径之间的延迟差异。</li>
+<li>提高时钟和数据的可靠性<br>当时钟路径和数据路径彼此交织在一起时,它们之间可能会产生较大的耦合,导致时序不确定性。插入buffer可以在时钟和数据路径之间形成隔离,降低耦合,提高可靠性。</li>
+<li>驱动能力<br>当数据路径的负载较重时(如需要驱动较多的寄存器或者较长的走线),插入buffer可以提供足够的驱动能力,确保数据可以准确地传输到目的地。</li>
+<li>时钟树构建<br>在构建时钟树时,需要在关键节点插入buffer,以确保时钟信号能够被正确地分布和驱动到整个芯片的各个部分。<br>总的来说,在时序约束过程中合理插入buffer,可以优化时序路径,减小延迟,改善信号完整性,提高可靠性,从而帮助满足setup和hold时间的约束要求。</li>
+</ol>
+<p>bank interleaving是一种内存访问技术,用于提高内存系统的带宽和吞吐量。它的工作原理如下:<br>现代DRAM内存芯片通常被划分为多个独立的bank(内存库)。每个bank都有自己的行缓冲区,可以独立地执行内存访问操作。<br>bank interleaving通过将内存地址空间交错地映射到不同的bank上,使得对连续的内存地址的访问能够并行执行于不同的bank中。这样就可以在一个bank执行预充电操作的同时,访问另一个bank中已经就绪的数据。<br>具体来说,bank interleaving会根据特定的地址位对bank进行索引,将连续的地址交替映射到不同的bank。比如假设有4个bank,可以使用地址的最低2位作为bank索引,这样0x00、0x04、0x08…将映射到bank 0,0x01、0x05、0x09…将映射到bank 1,以此类推。<br>通过这种交错映射,访问连续地址时可以并发访问不同的bank,提高了内存访问的并行度和效率。bank interleaving在提升内存系统吞吐量方面很有效,尤其对于需要访问大量连续数据的应用(如图形处理、科学计算等)效果更加明显。<br>当然,为了发挥bank interleaving的优势,内存控制器需要能够智能地调度和管理对不同bank的访问请求,并尽量避免bank之间的访问冲突。所以它通常与内存控制器的复杂调度策略相结合。</p>
+<p>multi banking</p>
 <hr>
 <p><strong>## 秋招</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lum250/article/details/128585247?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171293039916800184165442%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=171293039916800184165442&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-128585247-null-null.142%5Ev100%5Econtrol&utm_term=%E6%95%B0%E5%AD%97ic%E8%AE%BE%E8%AE%A1%E7%AE%80%E5%8E%86&spm=1018.2226.3001.4187">https://blog.csdn.net/lum250/article/details/128585247?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171293039916800184165442%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=171293039916800184165442&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-128585247-null-null.142^v100^control&amp;utm_term=%E6%95%B0%E5%AD%97ic%E8%AE%BE%E8%AE%A1%E7%AE%80%E5%8E%86&amp;spm=1018.2226.3001.4187</a></p>
