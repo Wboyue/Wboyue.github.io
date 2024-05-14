@@ -13,7 +13,7 @@
 
 
 
-<title>Archives: 2024/5 | Edith</title>
+<title>CNN | Edith</title>
 
 
 
@@ -579,107 +579,165 @@
     }
 </script>
             <div class="main">
-                <div class="post-wrap archive">
+                <div class="container">
     
     
-        
-
-        
-            <h3>2024</h3>
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/13/CNN/">CNN</a>
-            <span class="archive-item-date">May 13, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/11/cnnacc/">cnnacc</a>
-            <span class="archive-item-date">May 11, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/09/2024-5-pro/">2024-5-pro</a>
-            <span class="archive-item-date">May 9, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/%E6%95%B0%E5%AD%97IC%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">数字IC前端设计基础知识</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/GNU-Linux/">GNU/Linux</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95/">机器学习算法</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">算法分析</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/05/%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/">模型压缩算法</a>
-            <span class="archive-item-date">May 5, 2024</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2024/05/02/2024-5/">2024-5</a>
-            <span class="archive-item-date">May 2, 2024</span>
-        </article>
-    
-    
-    <nav class="pagination">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2024/05/page/2/">2</a>
-    </nav>
-
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">CNN</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">WuBoyue</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">May 13, 2024&nbsp;&nbsp;14:09:35</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="1-CNN经典模型发展历史"><a href="#1-CNN经典模型发展历史" class="headerlink" title="1.CNN经典模型发展历史"></a>1.CNN经典模型发展历史</h1><img src="115aea6d88be40deafbfe1820e7fdf7a.jpeg" alt="115aea6d88be40deafbfe1820e7fdf7a" />
+
+
+
+
+
+<blockquote>
+<p> 参考文献:<br> [1].<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44710986/article/details/125810589?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171558043416800222812726%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=171558043416800222812726&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-125810589-null-null.142%5Ev100%5Epc_search_result_base1&utm_term=cnn%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%94%B9%E8%BF%9B%E6%96%B9%E6%A1%88&spm=1018.2226.3001.4187">CNN经典模型发展进程</a>.</p>
+</blockquote>
+<h1 id="深度可分离卷积"><a href="#深度可分离卷积" class="headerlink" title="深度可分离卷积"></a>深度可分离卷积</h1>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>WuBoyue</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2024/05/13/CNN/">http://example.com/2024/05/13/CNN/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/AI%E7%AE%97%E6%B3%95/"># AI算法</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024/05/11/cnnacc/">cnnacc</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
             </div>
             <footer id="footer" class="footer">
     <div class="copyright">
