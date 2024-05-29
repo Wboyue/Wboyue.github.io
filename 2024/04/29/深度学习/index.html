@@ -670,7 +670,24 @@
 
         <div class="post-content">
             <hr>
-<h2 id="title-CNN-加速器date-2024-04-28-20-28-55tags-cnn-accelerator"><a href="#title-CNN-加速器date-2024-04-28-20-28-55tags-cnn-accelerator" class="headerlink" title="title: CNN 加速器date: 2024-04-28 20:28:55tags: [cnn accelerator]"></a>title: CNN 加速器<br>date: 2024-04-28 20:28:55<br>tags: [cnn accelerator]</h2><h1 id="学习率"><a href="#学习率" class="headerlink" title="学习率"></a>学习率</h1><p>神经网络的训练参数设置主要包括学习率的设置和批数量的设置，其中学习率是梯度下降算法进行权重更新的步长，较大的学习速率允许模型更快地学习，但最终只能学习到次优的权重集，较小的学习速率可以允许模型学习到更优化或者是甚至全局最佳的权重集，但是可能花费更长的时间来训练，因此学习率的设定非常重要；而批数量指的是一次输入到网络的图像的训练样本数量，批数量过大会导致处理器负荷过重计算速度减慢，批数量过小会使得训练过程中<br>产生震荡，收敛效果不佳。</p>
+<h2 id="title-CNN-加速器date-2024-04-28-20-28-55tags-cnn-accelerator"><a href="#title-CNN-加速器date-2024-04-28-20-28-55tags-cnn-accelerator" class="headerlink" title="title: CNN 加速器date: 2024-04-28 20:28:55tags: [cnn accelerator]"></a>title: CNN 加速器<br>date: 2024-04-28 20:28:55<br>tags: [cnn accelerator]</h2><h1 id="YOLOv5"><a href="#YOLOv5" class="headerlink" title="YOLOv5"></a>YOLOv5</h1><img src="image-20240524104010889.png" alt="image-20240524104010889" />
+
+<center>
+<font size=3 >
+YOLOv5 network structure.
+</font>
+</center>
+
+
+
+
+
+
+
+
+
+
+
 <h2 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h2><p><a target="_blank" rel="noopener" href="https://pytorch.org/">https://pytorch.org/</a></p>
 <p><a target="_blank" rel="noopener" href="https://pytorch.org/tutorials/">https://pytorch.org/tutorials/</a></p>
 <h2 id="网络架构选择与修改"><a href="#网络架构选择与修改" class="headerlink" title="网络架构选择与修改"></a>网络架构选择与修改</h2><center>
@@ -684,7 +701,7 @@ Fig.
 
 <h2 id="mobileNetV1"><a href="#mobileNetV1" class="headerlink" title="mobileNetV1"></a>mobileNetV1</h2><p>由Google提出，其核心是深度可分离卷积。不仅可以降低模型计算复杂度，而且可以大大降低模型大小，适合应用在真实的移动端应用场景。</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/122699618?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171419811416800182717185%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171419811416800182717185&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-122699618-null-null.142%5Ev100%5Econtrol&utm_term=mobilenetv1%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0&spm=1018.2226.3001.4187">https://blog.csdn.net/hhhhhhhhhhwwwwwwwwww/article/details/122699618?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171419811416800182717185%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=171419811416800182717185&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-122699618-null-null.142^v100^control&amp;utm_term=mobilenetv1%E7%9A%84pytorch%E5%AE%9E%E7%8E%B0&amp;spm=1018.2226.3001.4187</a></p>
-<p>为移动端部署目标检测模型确实需要考虑模型的尺寸和计算复杂度。以下是一些比较流行的轻量级目标检测卷积神经网络:</p>
+<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p>为移动端部署目标检测模型确实需要考虑模型的尺寸和计算复杂度。以下是一些比较流行的轻量级目标检测卷积神经网络:</p>
 <ol>
 <li><p><strong>YOLO系列</strong>:</p>
 <ul>
@@ -859,7 +876,7 @@ Fig.
 </font>
 </center>
 
-<h3 id="YOLOv5"><a href="#YOLOv5" class="headerlink" title="YOLOv5"></a>YOLOv5</h3><blockquote>
+<h3 id="YOLOv5-1"><a href="#YOLOv5-1" class="headerlink" title="YOLOv5"></a>YOLOv5</h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">https://github.com/ultralytics/yolov5</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.ultralytics.com/zh/yolov5/">https://docs.ultralytics.com/zh/yolov5/</a></p>
 </blockquote>
@@ -917,7 +934,10 @@ Figure.
 <li><strong>人工干预</strong> 人工引导和修正模型识别结果,也是医疗领域常用的手段,可以构建交互式识别系统。</li>
 </ol>
 <p>综上所述,通过数据增强、模型微调和集成、注意力机制等多管齐下,结合领域知识对网络进行优化和改造,可以有效提高血细胞识别的性能。</p>
-<h1 id="如何写出轻量化的目标检测算法？"><a href="#如何写出轻量化的目标检测算法？" class="headerlink" title="如何写出轻量化的目标检测算法？"></a><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/528661389/answer/2448182267">如何写出轻量化的目标检测算法？</a></h1><h3 id="8bit-4bit-2bit量化"><a href="#8bit-4bit-2bit量化" class="headerlink" title="8bit\4bit\2bit量化"></a>8bit\4bit\2bit量化</h3><h3 id="空洞思想"><a href="#空洞思想" class="headerlink" title="空洞思想"></a>空洞思想</h3><h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><h2 id="图像与权重数据的转换"><a href="#图像与权重数据的转换" class="headerlink" title="图像与权重数据的转换"></a>图像与权重数据的转换</h2><p>YoloR</p>
+<h1 id="YoloX"><a href="#YoloX" class="headerlink" title="YoloX"></a>YoloX</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/660051109">目标检测网络YoloX介绍及实现—深度学习十六</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37541097/article/details/125132817?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522171616466816800180652632%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=171616466816800180652632&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-125132817-null-null.142%5Ev100%5Epc_search_result_base1&utm_term=yolox&spm=1018.2226.3001.4187">YOLOX网络结构详解</a></p>
+<h1 id="如何写出轻量化的目标检测算法？"><a href="#如何写出轻量化的目标检测算法？" class="headerlink" title="如何写出轻量化的目标检测算法？"></a><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/528661389/answer/2448182267">如何写出轻量化的目标检测算法？</a></h1><h1 id="NanoDet"><a href="#NanoDet" class="headerlink" title="NanoDet"></a>NanoDet</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/473341619">目标检测模型NanoDet（超轻量，速度很快）介绍和PyTorch版本实践</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/306530300">YOLO之外的另一选择，手机端97FPS的Anchor-Free目标检测模型NanoDet现已开源~</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lishanlu136/article/details/136830868?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-136830868-blog-130894173.235%5Ev43%5Epc_blog_bottom_relevance_base3&spm=1001.2101.3001.4242.2&utm_relevant_index=4">目标检测——PP-PicoDet算法解读</a></p>
+<h3 id="8bit-4bit-2bit量化"><a href="#8bit-4bit-2bit量化" class="headerlink" title="8bit\4bit\2bit量化"></a>8bit\4bit\2bit量化</h3><h3 id="空洞思想"><a href="#空洞思想" class="headerlink" title="空洞思想"></a>空洞思想</h3><h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><h2 id="图像与权重数据的转换"><a href="#图像与权重数据的转换" class="headerlink" title="图像与权重数据的转换"></a>图像与权重数据的转换</h2><p>YoloR</p>
 
         </div>
 

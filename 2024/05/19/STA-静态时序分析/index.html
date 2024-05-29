@@ -669,7 +669,15 @@
         </header>
 
         <div class="post-content">
-            <h1 id="虚拟时钟-Virtual-Clocks"><a href="#虚拟时钟-Virtual-Clocks" class="headerlink" title="虚拟时钟(Virtual Clocks)"></a>虚拟时钟(Virtual Clocks)</h1><p>需要虚拟时钟是因为DUA的时钟和驱动DUA输入端口的时钟之间有延迟。</p>
+            <h1 id="亚稳态"><a href="#亚稳态" class="headerlink" title="亚稳态"></a>亚稳态</h1><h1 id="跨时钟域"><a href="#跨时钟域" class="headerlink" title="跨时钟域"></a>跨时钟域</h1><h2 id="多级触发器同步技术"><a href="#多级触发器同步技术" class="headerlink" title="多级触发器同步技术"></a>多级触发器同步技术</h2><img src="image-20240521200646179.png" alt="image-20240521200646179" />
+
+
+
+
+
+
+
+<h1 id="虚拟时钟-Virtual-Clocks"><a href="#虚拟时钟-Virtual-Clocks" class="headerlink" title="虚拟时钟(Virtual Clocks)"></a>虚拟时钟(Virtual Clocks)</h1><p>需要虚拟时钟是因为DUA的时钟和驱动DUA输入端口的时钟之间有延迟。</p>
 <p>以下图为例，DUA(design under analysis)的时钟来自CLK_CORE，但是驱动输入端口(ROW_IN)的时钟是CLK_SAD。如何指定输入端口ROW_IN和输出端口STATE_O的IO约束？</p>
 <img src="image-20240519152948738.png" alt="image-20240519152948738" />
 
