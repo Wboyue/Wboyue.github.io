@@ -696,7 +696,16 @@
 
 
 
-<h2 id="检测速率"><a href="#检测速率" class="headerlink" title="检测速率"></a>检测速率</h2><h1 id="深度可分离卷积"><a href="#深度可分离卷积" class="headerlink" title="深度可分离卷积"></a>深度可分离卷积</h1><h1 id="Anchor-free"><a href="#Anchor-free" class="headerlink" title="Anchor-free"></a>Anchor-free</h1><h1 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h1><h2 id="CBAM"><a href="#CBAM" class="headerlink" title="CBAM"></a>CBAM</h2><p>CBAM（convolutional block attention module）是一种简单有效的注意力模块<sup>[1]</sup>。</p>
+<h2 id="检测速率"><a href="#检测速率" class="headerlink" title="检测速率"></a>检测速率</h2><h1 id="深度可分离卷积"><a href="#深度可分离卷积" class="headerlink" title="深度可分离卷积"></a>深度可分离卷积</h1><h1 id="Anchor-free"><a href="#Anchor-free" class="headerlink" title="Anchor-free"></a>Anchor-free</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/528661389/answer/2448182267">如何写出轻量化的目标检测算法？</a></p>
+<h1 id="改进Yolo-Fast用于血细胞检测分类"><a href="#改进Yolo-Fast用于血细胞检测分类" class="headerlink" title="改进Yolo-Fast用于血细胞检测分类"></a>改进Yolo-Fast用于血细胞检测分类</h1><p>改进yolo-fastestv2</p>
+<p>部署到pynq-z2上(不管用什么方法，直接用vitis ai来调用DPU)</p>
+<p>分情况：如果知识调用DPU，那肯</p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>高精度和更快的检测速度</p>
+<p>end-to-end recognition，硬件部署，实时检测和识别挑战</p>
+<p>目前的研究趋势是构建计算效率高的轻量级模型</p>
+<h1 id="Efficient-mobile-network（Emobile-Net）"><a href="#Efficient-mobile-network（Emobile-Net）" class="headerlink" title="Efficient mobile network（Emobile Net）"></a>Efficient mobile network（Emobile Net）</h1><p>高校移动网络，通常作为主干网络</p>
+<h1 id="Spatial-pyramid-pooling-fast（SPPF）"><a href="#Spatial-pyramid-pooling-fast（SPPF）" class="headerlink" title="Spatial pyramid pooling-fast（SPPF）"></a>Spatial pyramid pooling-fast（SPPF）</h1><h1 id="注意机制-attention-mechanism"><a href="#注意机制-attention-mechanism" class="headerlink" title="注意机制 attention mechanism"></a>注意机制 attention mechanism</h1><p>改进cnn在图像特征密度较高的区域的特征。yolov5中集成CBAM增加细胞图像中细胞密集区域的权重，利于网络抵抗细胞以外信息的能力。</p>
+<h2 id="CBAM"><a href="#CBAM" class="headerlink" title="CBAM"></a>CBAM</h2><p>CBAM（convolutional block attention module）是一种简单有效的注意力模块<sup>[1]</sup>。</p>
 <hr>
 <p>transformer encoder block 以及convolutional block attention module (CBAM)可以用来实现注意力机制。在血细胞图像中CBAM增加了细胞密集区域的权重。在处理上下特征数据时，transformer encoder block开源改进网络捕获细胞特性细节的能力。改进的模型开源在细胞密集区域识别和区分细胞。</p>
 <img src="image-20240524104530121.png" alt="image-20240524104530121" />
@@ -712,17 +721,34 @@
 
 
 <hr>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><h1 id="transformer-encoder-block"><a href="#transformer-encoder-block" class="headerlink" title="transformer encoder block"></a>transformer encoder block</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/528661389/answer/2448182267">如何写出轻量化的目标检测算法？</a></p>
-<h1 id="改进Yolo-Fast用于血细胞检测分类"><a href="#改进Yolo-Fast用于血细胞检测分类" class="headerlink" title="改进Yolo-Fast用于血细胞检测分类"></a>改进Yolo-Fast用于血细胞检测分类</h1><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="色彩变幻"><a href="#色彩变幻" class="headerlink" title="色彩变幻"></a>色彩变幻</h3><p>适应不同亮度环境</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><h1 id="HVAM-horizontal-vertical-attention-mechanism"><a href="#HVAM-horizontal-vertical-attention-mechanism" class="headerlink" title="HVAM-horizontal vertical attention mechanism"></a>HVAM-horizontal vertical attention mechanism</h1><p>水平垂直注意力机制</p>
+<h1 id="transformer-encoder-block"><a href="#transformer-encoder-block" class="headerlink" title="transformer encoder block"></a>transformer encoder block</h1><p>在yolov5对上下特征数据的处理中加入了 transformer encoder block</p>
+<h1 id="Omnidimensional-convolution"><a href="#Omnidimensional-convolution" class="headerlink" title="Omnidimensional convolution"></a>Omnidimensional convolution</h1><p>Use Omindimensional Dynamic Convolution (ODConv) (Li et al., 2022b) to replace the traditional downsampling convolutional layer, which enhances the backbone’s capability to generate more features. 增强骨干网络产生更多特征的能力。</p>
+<p>研究了将ODConv融合到YOLOv5s的不同层中。他们的研究发现在更浅的层中部署ODConv可以得到更大的精度增益和更少的参数增量。</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p>Cheng S, Zhu Y, Wu S. Deep learning based efficient ship detection from drone-captured images for maritime surveillance[J]. Ocean Engineering, 2023, 285: 115440.</p>
+<p>Li,C., Zhou, A., Yao, A., 2022b. Omni-dimensional dynamic convolution. In: International Conference on Learning Representations. URL: <a target="_blank" rel="noopener" href="https://openreview.net/forum?id=DmpCfq6Mg39">https://openreview.net/forum?id=DmpCfq6Mg39</a>.</p>
+<h1 id="ConvNeXt块替换C3块"><a href="#ConvNeXt块替换C3块" class="headerlink" title="ConvNeXt块替换C3块"></a>ConvNeXt块替换C3块</h1><p>提高检测速度，但是精度略有下降</p>
+<p>研究了在YOLOv5s的不同层中融合ConvNeXt块的问题，选择在第六层用ConvNeXt替换原来的C3</p>
+<h2 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref"></a>Ref</h2><p>Cheng S, Zhu Y, Wu S. Deep learning based efficient ship detection from drone-captured images for maritime surveillance[J]. Ocean Engineering, 2023, 285: 115440.</p>
+<p>Liu, Z., Mao, H., Wu, C.Y., Feichtenhofer, C., Darrell, T., Xie, S., 2022. A ConvNet for the 2020s. In: Proceedings of the IEEE&#x2F;CVF Conference on Computer Vision and Pattern Recognition. CVPR, pp. 11976–11986.</p>
+<h1 id="Dilated-Convolution"><a href="#Dilated-Convolution" class="headerlink" title="Dilated Convolution"></a>Dilated Convolution</h1><p>扩张性卷积用于增加主干网络的感受野</p>
+<h1 id="Depthwise-Separable-Convolution-method"><a href="#Depthwise-Separable-Convolution-method" class="headerlink" title="Depthwise Separable Convolution method"></a>Depthwise Separable Convolution method</h1><p>深度可分离卷积方法用来最小化检测器的参数</p>
+<h1 id="Swish-activation-function"><a href="#Swish-activation-function" class="headerlink" title="Swish activation function"></a>Swish activation function</h1><p>增强性能</p>
+<h1 id="Distance-Intersection-over-Union"><a href="#Distance-Intersection-over-Union" class="headerlink" title="Distance Intersection over Union"></a>Distance Intersection over Union</h1><p>改进损失函数</p>
+<h1 id="Compound-scaling"><a href="#Compound-scaling" class="headerlink" title="Compound scaling"></a>Compound scaling</h1><p>增加神经网络的深度是最常见的提高准确率的方法，但存在梯度不稳定问题。</p>
+<p>宽网络倾向于寻找低级特征，不具备提取高级特征的能力。</p>
+<p>复合缩放：深度、宽度、分辨率按照一定的比例变化。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="色彩变幻"><a href="#色彩变幻" class="headerlink" title="色彩变幻"></a>色彩变幻</h3><p>适应不同亮度环境</p>
 <p>模型基于Yolo-Fastv2</p>
 <p>数据集BCCD</p>
 <p>主干网络</p>
 <p>坐标注意力机制…….</p>
 <p>颈部网络</p>
+<h1 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h1><p>马赛克数据增强</p>
 <h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>Loss-Epoch曲线图</p>
 <p>P-R曲线,P%,R%</p>
 <p>AP%</p>
-<p><a href="mailto:&#x6d;&#x41;&#x50;&#x40;&#48;&#x2e;&#53;">&#x6d;&#x41;&#x50;&#x40;&#48;&#x2e;&#53;</a>(%)</p>
+<p><a href="mailto:&#x6d;&#65;&#x50;&#x40;&#x30;&#46;&#x35;">&#x6d;&#65;&#x50;&#x40;&#x30;&#46;&#x35;</a>(%)</p>
 <p>parames-mAP curve</p>
 <p>AveIoU%</p>
 <p>混淆矩阵</p>

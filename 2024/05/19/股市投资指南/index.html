@@ -582,6 +582,71 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
@@ -604,7 +669,143 @@
         </header>
 
         <div class="post-content">
-            
+            <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="什么是股票"><a href="#什么是股票" class="headerlink" title="什么是股票"></a>什么是股票</h2><h2 id="行话"><a href="#行话" class="headerlink" title="行话"></a>行话</h2><h3 id="头寸"><a href="#头寸" class="headerlink" title="头寸"></a>头寸</h3><p>“头寸”是金融市场中的一个基本术语，广泛用于股票、外汇、期货、期权等各种交易场景。简单来说，头寸就是投资者或交易者在市场中的持仓状态。具体含义如下：</p>
+<ol>
+<li><p>持有的资产：</p>
+<ul>
+<li>指投资者当前持有的金融资产。</li>
+<li>可以是股票、债券、外汇、期货合约等。</li>
+</ul>
+</li>
+<li><p>方向和数量：</p>
+<ul>
+<li>多头头寸：买入的资产数量。</li>
+<li>空头头寸：卖空的资产数量。</li>
+<li>例如：”持有1000股苹果多头头寸”或”持有10手黄金空头头寸”。</li>
+</ul>
+</li>
+<li><p>财务承诺：</p>
+<ul>
+<li>表示在市场中所承担的财务义务。</li>
+<li>买入股票的义务是付款，卖空的义务是未来交付股票。</li>
+</ul>
+</li>
+<li><p>风险暴露：</p>
+<ul>
+<li>头寸大小反映了投资者在某个资产上的风险敞口。</li>
+<li>头寸越大，受价格变动影响越大。</li>
+</ul>
+</li>
+<li><p>净头寸：</p>
+<ul>
+<li>多头和空头头寸的差额。</li>
+<li>净多头：多头大于空头。</li>
+<li>净空头：空头大于多头。</li>
+</ul>
+</li>
+<li><p>开仓和平仓：</p>
+<ul>
+<li>开仓：建立新头寸（买入或卖空）。</li>
+<li>平仓：关闭现有头寸（卖出或买回）。</li>
+</ul>
+</li>
+<li><p>头寸管理：</p>
+<ul>
+<li>根据市场变化调整头寸大小。</li>
+<li>控制单个头寸和总体头寸的风险。</li>
+</ul>
+</li>
+<li><p>保证金要求：</p>
+<ul>
+<li>在保证金交易中（如期货、外汇），头寸大小决定了所需保证金。</li>
+<li>头寸越大，保证金要求越高。</li>
+</ul>
+</li>
+<li><p>对冲和投机：</p>
+<ul>
+<li>对冲头寸：为减少现有投资的风险。</li>
+<li>投机头寸：为从价格变动中获利。</li>
+</ul>
+</li>
+<li><p>在交易行话中：</p>
+<ul>
+<li>“我有头寸”意味着”我在市场中有持仓”。</li>
+<li>“头寸过重”表示风险过高。</li>
+</ul>
+</li>
+</ol>
+<p>理解并管理好自己的头寸是成功交易的关键。它不仅关系到潜在的盈亏，还直接影响到风险水平。无论是专业交易员还是个人投资者，都需要根据自己的风险承受能力和市场观点来谨慎选择头寸大小和方向。</p>
+<h2 id="股价涨跌原理"><a href="#股价涨跌原理" class="headerlink" title="股价涨跌原理"></a>股价涨跌原理</h2><p>股价的涨跌是一个复杂的现象，受多种因素影响。主要原因包括：</p>
+<ol>
+<li><p>供求关系：</p>
+<ul>
+<li>当买家（多头）多于卖家（空头）时，股价上涨。</li>
+<li>反之，当卖家多于买家时，股价下跌。</li>
+</ul>
+</li>
+<li><p>公司基本面：</p>
+<ul>
+<li>盈利增长、收入增加会推动股价上涨。</li>
+<li>亏损、收入下降则会导致股价下跌。</li>
+</ul>
+</li>
+<li><p>行业和经济状况：</p>
+<ul>
+<li>行业景气或经济繁荣时，股价tend往上涨。</li>
+<li>行业衰退或经济不景气时，股价tend往下跌。</li>
+</ul>
+</li>
+<li><p>投资者情绪：</p>
+<ul>
+<li>乐观和贪婪情绪会推动股价上涨。</li>
+<li>悲观和恐惧情绪会导致股价下跌。</li>
+</ul>
+</li>
+<li><p>新闻和事件：</p>
+<ul>
+<li>正面新闻（如新产品发布）会推高股价。</li>
+<li>负面新闻（如丑闻）会拖累股价。</li>
+</ul>
+</li>
+<li><p>财务报告：</p>
+<ul>
+<li>超出预期的财报会刺激股价上涨。</li>
+<li>低于预期的财报会引发股价下跌。</li>
+</ul>
+</li>
+<li><p>市场趋势：</p>
+<ul>
+<li>在牛市中，整体上涨趋势会带动个股上涨。</li>
+<li>在熊市中，整体下跌趋势会拖累个股下跌。</li>
+</ul>
+</li>
+<li><p>利率和货币政策：</p>
+<ul>
+<li>低利率环境有利于股价上涨。</li>
+<li>加息通常会压制股价。</li>
+</ul>
+</li>
+<li><p>投机和技术面因素：</p>
+<ul>
+<li>短线交易者根据图表和技术指标买卖。</li>
+<li>自动化交易系统也会影响短期走势。</li>
+</ul>
+</li>
+<li><p>公司行为：</p>
+<ul>
+<li>股票回购会减少流通股，推升股价。</li>
+<li>大规模增发会稀释每股价值，拖累股价。</li>
+</ul>
+</li>
+<li><p>估值水平：</p>
+<ul>
+<li>当股票被认为低估时，会吸引买家。</li>
+<li>高估时，投资者会卖出，导致股价下跌。</li>
+</ul>
+</li>
+</ol>
+<p>总之，股价是市场参与者对公司价值和未来前景的集体预期的体现。这种预期受到众多因素的影响，导致了股价的持续波动。理解这些因素有助于投资者做出更明智的决策。</p>
+
         </div>
 
         
