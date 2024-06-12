@@ -698,7 +698,8 @@
 
 
 <h2 id="检测速率"><a href="#检测速率" class="headerlink" title="检测速率"></a>检测速率</h2><h1 id="深度可分离卷积"><a href="#深度可分离卷积" class="headerlink" title="深度可分离卷积"></a>深度可分离卷积</h1><h1 id="Anchor-free"><a href="#Anchor-free" class="headerlink" title="Anchor-free"></a>Anchor-free</h1><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/528661389/answer/2448182267">如何写出轻量化的目标检测算法？</a></p>
-<h1 id="改进Yolo-Fast用于血细胞检测分类"><a href="#改进Yolo-Fast用于血细胞检测分类" class="headerlink" title="改进Yolo-Fast用于血细胞检测分类"></a>改进Yolo-Fast用于血细胞检测分类</h1><p><img src="/image-20240603102800279.png" alt="image-20240603102800279"></p>
+<h1 id="改进Yolo-Fast用于血细胞检测分类"><a href="#改进Yolo-Fast用于血细胞检测分类" class="headerlink" title="改进Yolo-Fast用于血细胞检测分类"></a>改进Yolo-Fast用于血细胞检测分类</h1><img src="image-20240603102800279.png" alt="image-20240603102800279" />
+
 <p>model，打印模型结构</p>
 <p>值得注意的是用这些方法打印出来的模型结构是不会显示concat，上采样这类层的！！！</p>
 <p>这是一个很好的观察！在使用<code>print(model)</code>或类似的方法查看YOLOv5模型结构时，确实不会直接显示出<code>concat</code>（拼接）和下采样这样的层。这是因为在YOLOv5的模型定义中，这些操作是在前向传播（forward pass）函数中通过PyTorch的函数调用实现的，而不是作为独立的层定义的。</p>
@@ -794,7 +795,7 @@
 <p>transformer encoder block 以及convolutional block attention module (CBAM)可以用来实现注意力机制。在血细胞图像中CBAM增加了细胞密集区域的权重。在处理上下特征数据时，transformer encoder block开源改进网络捕获细胞特性细节的能力。改进的模型开源在细胞密集区域识别和区分细胞。</p>
 <img src="image-20240524104530121.png" alt="image-20240524104530121" />
 
-<img src="/image-20240524104555281.png" alt="image-20240524104555281" />
+<img src="image-20240524104555281.png" alt="image-20240524104555281" />
 
 
 
@@ -832,7 +833,7 @@
 <h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>Loss-Epoch曲线图</p>
 <p>P-R曲线,P%,R%</p>
 <p>AP%</p>
-<p><a href="mailto:&#x6d;&#x41;&#80;&#64;&#x30;&#46;&#53;">&#x6d;&#x41;&#80;&#64;&#x30;&#46;&#53;</a>(%)</p>
+<p><a href="mailto:&#109;&#x41;&#x50;&#x40;&#x30;&#46;&#x35;">&#109;&#x41;&#x50;&#x40;&#x30;&#46;&#x35;</a>(%)</p>
 <p>parames-mAP curve</p>
 <p>AveIoU%</p>
 <p>混淆矩阵</p>
@@ -860,19 +861,50 @@
 </li>
 </ol>
 <p>这种做法能够更客观公正地评估模型的真实能力,防止过度拟合训练数据。同时通过监控每个epoch的表现,可以观察模型收敛的过程。</p>
-<h1 id="BCCD-data-set"><a href="#BCCD-data-set" class="headerlink" title="BCCD data set"></a>BCCD data set</h1><h2 id="yolov5s"><a href="#yolov5s" class="headerlink" title="yolov5s"></a>yolov5s</h2><img src="/image-20240609200206802.png" alt="image-20240609200206802" />
+<h1 id="BCCD-data-set"><a href="#BCCD-data-set" class="headerlink" title="BCCD data set"></a>BCCD data set</h1><h2 id="yolov5s"><a href="#yolov5s" class="headerlink" title="yolov5s"></a>yolov5s</h2><img src="image-20240609200206802.png" alt="image-20240609200206802" />
 
-<img src="/image-20240609200245562.png" alt="image-20240609200245562" />
+<img src="image-20240609200245562.png" alt="image-20240609200245562" />
 
-<img src="/image-20240609212445044.png" alt="image-20240609212445044" />
+<img src="image-20240609212445044.png" alt="image-20240609212445044" />
 
 
 
-<h2 id="yolov5sde-backbone部分用MobileNetV3替换"><a href="#yolov5sde-backbone部分用MobileNetV3替换" class="headerlink" title="yolov5sde backbone部分用MobileNetV3替换"></a>yolov5sde backbone部分用MobileNetV3替换</h2><img src="/image-20240609214517425.png" alt="image-20240609214517425" />
+<h2 id="yolov5sde-backbone部分用MobileNetV3替换"><a href="#yolov5sde-backbone部分用MobileNetV3替换" class="headerlink" title="yolov5sde backbone部分用MobileNetV3替换"></a>yolov5sde backbone部分用MobileNetV3替换</h2><img src="image-20240609214517425.png" alt="image-20240609214517425" />
 
-<img src="/image-20240609214546521.png" alt="image-20240609214546521" />
+<img src="image-20240609214546521.png" alt="image-20240609214546521" />
 
-<p><img src="/image-20240609214637495.png" alt="image-20240609214637495"></p>
+<img src="image-20240609214637495.png" alt="image-20240609214637495" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
