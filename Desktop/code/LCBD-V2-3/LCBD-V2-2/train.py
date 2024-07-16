@@ -601,6 +601,7 @@ def parse_opt(known=False):
     parser = argparse.ArgumentParser()
    # parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='initial weights path')
    #  parser.add_argument('--weights', type=str, default=ROOT /'traced_resnet_model.pt', help='initial weights path')
+   #  parser.add_argument('--weights', type=str, default=ROOT /'litebccd.pt', help='initial weights path')
     parser.add_argument('--weights', type=str, default=None, help='initial weights path')
    # parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
     parser.add_argument('--cfg', type=str, default=ROOT / 'models/yolo_fastest_v23.yaml', help='model.yaml path')

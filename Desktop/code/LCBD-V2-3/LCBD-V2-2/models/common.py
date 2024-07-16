@@ -1421,7 +1421,7 @@ class Shuffle_Block(nn.Module):
                       branch_features, kernel_size=1, stride=1, padding=0, bias=False),
             nn.BatchNorm2d(branch_features),
             nn.ReLU(inplace=True),
-            # CBAM(inp if (self.stride > 1) else branch_features),
+            CBAM(branch_features),
             self.depthwise_conv(branch_features, branch_features, kernel_size=3, stride=self.stride, padding=1),
             nn.BatchNorm2d(branch_features),
             nn.Conv2d(branch_features, branch_features, kernel_size=1, stride=1, padding=0, bias=False),
